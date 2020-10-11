@@ -1175,7 +1175,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ddc8ff;
+  background: #736106;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2465,7 +2465,7 @@ embed {
   white-space: nowrap;
 }
 body {
-  background: url("http://ranuxy.com/i/2020/10/06/xck2ix.png");
+  background: url("https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011152457.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
