@@ -8,10 +8,10 @@ document.addEventListener('visibilitychange', function () {
         clearTimeout(titleTime);
     }
     else {
-        $('[rel="icon"]').attr('href', "/favicon.ico");
+        $('[rel="icon"]').attr('href', "https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011144001.png");
         document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;
         titleTime = setTimeout(function () {
-            document.title = OriginTitle;
+                  document.title = OriginTitle;
         }, 2000);
     }
 });
