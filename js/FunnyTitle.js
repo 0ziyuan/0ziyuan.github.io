@@ -3,7 +3,7 @@ var OriginTitle = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        $('[rel="icon"]').attr('href', "/funny.ico");
+        $('[rel="icon"]').attr('href', "https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011144001.png");
         document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
         clearTimeout(titleTime);
     }
