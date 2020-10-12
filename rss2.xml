@@ -9,8 +9,158 @@
     <atom:link href="https://0-ziyuan.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Don&#39;t try to understand it, feel it.</description>
-    <pubDate>Fri, 09 Oct 2020 08:20:48 GMT</pubDate>
+    <pubDate>Mon, 12 Oct 2020 15:59:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Set Theory</title>
+      <link>https://0-ziyuan.com/2020/10/12/Set-Theory/</link>
+      <guid>https://0-ziyuan.com/2020/10/12/Set-Theory/</guid>
+      <pubDate>Mon, 12 Oct 2020 15:48:03 GMT</pubDate>
+      
+      <description>&lt;p&gt;集合论-基础知识-思维导图&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>集合论-基础知识-思维导图</p><a id="more"></a><p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201012235518.jpg"></p>]]></content:encoded>
+      
+      
+      <category domain="https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</category>
+      
+      
+      <category domain="https://0-ziyuan.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">思维导图</category>
+      
+      <category domain="https://0-ziyuan.com/tags/%E7%AE%97%E6%B3%95/">算法</category>
+      
+      
+      <comments>https://0-ziyuan.com/2020/10/12/Set-Theory/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Relations</title>
+      <link>https://0-ziyuan.com/2020/10/12/Relations/</link>
+      <guid>https://0-ziyuan.com/2020/10/12/Relations/</guid>
+      <pubDate>Mon, 12 Oct 2020 15:45:44 GMT</pubDate>
+      
+      <description>&lt;p&gt;关系-基础知识-思维导图&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>关系-基础知识-思维导图</p><a id="more"></a><p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201012234704.jpg"></p>]]></content:encoded>
+      
+      
+      <category domain="https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</category>
+      
+      
+      <category domain="https://0-ziyuan.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">思维导图</category>
+      
+      <category domain="https://0-ziyuan.com/tags/%E5%85%B3%E7%B3%BB/">关系</category>
+      
+      
+      <comments>https://0-ziyuan.com/2020/10/12/Relations/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Induction and  Recursion</title>
+      <link>https://0-ziyuan.com/2020/10/12/Induction-and-Recursion/</link>
+      <guid>https://0-ziyuan.com/2020/10/12/Induction-and-Recursion/</guid>
+      <pubDate>Mon, 12 Oct 2020 15:42:52 GMT</pubDate>
+      
+      <description>&lt;p&gt;推导与递归-基础知识-思维导图&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>推导与递归-基础知识-思维导图</p><a id="more"></a><p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201012234505.jpg"></p>]]></content:encoded>
+      
+      
+      <category domain="https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</category>
+      
+      
+      <category domain="https://0-ziyuan.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">思维导图</category>
+      
+      <category domain="https://0-ziyuan.com/tags/%E6%8E%A8%E5%AF%BC%E4%B8%8E%E9%80%92%E5%BD%92/">推导与递归</category>
+      
+      
+      <comments>https://0-ziyuan.com/2020/10/12/Induction-and-Recursion/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Graph Theory</title>
+      <link>https://0-ziyuan.com/2020/10/12/Graph-Theory/</link>
+      <guid>https://0-ziyuan.com/2020/10/12/Graph-Theory/</guid>
+      <pubDate>Mon, 12 Oct 2020 15:39:06 GMT</pubDate>
+      
+      <description>&lt;p&gt;图论-基础知识-思维导图&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>图论-基础知识-思维导图</p><a id="more"></a><p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201012234055.jpg"></p>]]></content:encoded>
+      
+      
+      <category domain="https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</category>
+      
+      
+      <category domain="https://0-ziyuan.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">思维导图</category>
+      
+      <category domain="https://0-ziyuan.com/tags/%E5%9B%BE%E8%AE%BA/">图论</category>
+      
+      
+      <comments>https://0-ziyuan.com/2020/10/12/Graph-Theory/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Foundations of Logic</title>
+      <link>https://0-ziyuan.com/2020/10/12/Foundations-of-Logic/</link>
+      <guid>https://0-ziyuan.com/2020/10/12/Foundations-of-Logic/</guid>
+      <pubDate>Mon, 12 Oct 2020 15:26:26 GMT</pubDate>
+      
+      <description>&lt;p&gt;逻辑基础-基础知识-思维导图&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>逻辑基础-基础知识-思维导图</p><a id="more"></a><p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201012233623.jpg"></p>]]></content:encoded>
+      
+      
+      <category domain="https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</category>
+      
+      
+      <category domain="https://0-ziyuan.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">思维导图</category>
+      
+      <category domain="https://0-ziyuan.com/tags/%E9%80%BB%E8%BE%91%E5%9F%BA%E7%A1%80/">逻辑基础</category>
+      
+      
+      <comments>https://0-ziyuan.com/2020/10/12/Foundations-of-Logic/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Algorithms</title>
+      <link>https://0-ziyuan.com/2020/10/12/Algorithms/</link>
+      <guid>https://0-ziyuan.com/2020/10/12/Algorithms/</guid>
+      <pubDate>Mon, 12 Oct 2020 15:03:26 GMT</pubDate>
+      
+      <description>&lt;p&gt;算法-基础知识-思维导图&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>算法-基础知识-思维导图</p><a id="more"></a><p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201012232449.jpg"></p>]]></content:encoded>
+      
+      
+      <category domain="https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</category>
+      
+      
+      <category domain="https://0-ziyuan.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">思维导图</category>
+      
+      <category domain="https://0-ziyuan.com/tags/%E7%AE%97%E6%B3%95/">算法</category>
+      
+      
+      <comments>https://0-ziyuan.com/2020/10/12/Algorithms/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Hello World</title>
@@ -18,11 +168,16 @@
       <guid>https://0-ziyuan.com/2020/10/06/hello-world/</guid>
       <pubDate>Tue, 06 Oct 2020 05:38:26 GMT</pubDate>
       
-      <description>&lt;p&gt;Welcome to &lt;a href=&quot;https://0-ziyuan.com/&quot;&gt;0ziyuan’s blog&lt;/a&gt;! This is my very first post. Click &lt;a href=&quot;https://0-ziyuan.com/about/&quot;&gt;about&lt;/a&gt; for more info. If you get any problems when visiting my blog, you can contact me through &lt;a href=&quot;mailto:wanli@0-ziyuan.com&quot;&gt;my email&lt;/a&gt;. I’d be delighted if you fork me on &lt;a href=&quot;https://github.com/0ziyuan?tab=repositories&quot;&gt;GitHub&lt;/a&gt;​.😄&lt;/p&gt;</description>
+        
+        
+      <description>&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;p&gt;Welcome to &lt;a href=&quot;https://0-ziyuan.com/&quot;&gt;0ziyuan’s blog&lt;/a&gt;! This is my very first post. Click &lt;a href=&quot;https://0-zi</description>
+        
       
       
       
-      <content:encoded><![CDATA[<p>Welcome to <a href="https://0-ziyuan.com/">0ziyuan’s blog</a>! This is my very first post. Click <a href="https://0-ziyuan.com/about/">about</a> for more info. If you get any problems when visiting my blog, you can contact me through <a href="mailto:wanli@0-ziyuan.com">my email</a>. I’d be delighted if you fork me on <a href="https://github.com/0ziyuan?tab=repositories">GitHub</a>​.😄</p><a id="more"></a><h3 id="Why-I-build-this-blog-site"><a href="#Why-I-build-this-blog-site" class="headerlink" title="Why I build this blog site"></a>Why I build this blog site</h3><ol><li>记录学习；</li><li>分享交流；</li><li>Just for fun..😂</li></ol><h3 id="How-I-build-this-blog-site"><a href="#How-I-build-this-blog-site" class="headerlink" title="How I build this blog site"></a>How I build this blog site</h3><p>鉴于还是一个技术力和财力皆无的学生党，我是参照教程用Hexo生成静态页面，然后将代码托管到GitHub Pages上的方式创建网站的。博客主题为 Next下的Muse,文章编辑工具用的是Typora。主要参照教程如下，感兴趣的小伙伴可以康康：</p><ul><li><p><a href="https://zhuanlan.zhihu.com/p/102592286?utm_source=qq&utm_medium=social&utm_oi=1124773277125697536">从零开始搭建个人博客（超详细）</a></p></li><li><p><a href="https://zhuanlan.zhihu.com/p/69217131">网站ICP备案和公安备案流程</a></p></li><li><p><a href="https://www.jianshu.com/p/695283187b62">【官方支持】让个人域名下Github Pages完美支持https</a></p><p>注：教程有些bug，也可能与实际操作存在出入，不过应该都能百度解决，毕竟我就是这么干的😅(外加查看相关代码的说明文档)</p></li></ul><h3 id="In-the-end"><a href="#In-the-end" class="headerlink" title="In the end"></a>In the end</h3><p><em>Don’t try to understand it, feel it.</em></p>]]></content:encoded>
+      <content:encoded><![CDATA[<a id="more"></a><p>Welcome to <a href="https://0-ziyuan.com/">0ziyuan’s blog</a>! This is my very first post. Click <a href="https://0-ziyuan.com/about/">about</a> for more info. If you get any problems when visiting my blog, you can contact me through <a href="mailto:wanli@0-ziyuan.com">my email</a>. I’d be delighted if you fork me on <a href="https://github.com/0ziyuan?tab=repositories">GitHub</a>​.😄</p><h3 id="Why-I-build-this-blog-site"><a href="#Why-I-build-this-blog-site" class="headerlink" title="Why I build this blog site"></a>Why I build this blog site</h3><ol><li>记录学习；</li><li>分享交流；</li><li>Just for fun..😂</li></ol><h3 id="How-I-build-this-blog-site"><a href="#How-I-build-this-blog-site" class="headerlink" title="How I build this blog site"></a>How I build this blog site</h3><p>鉴于还是一个技术力和财力皆无的学生党，我是参照教程用Hexo生成静态页面，然后将代码托管到GitHub Pages上的方式创建网站的。博客主题为 Next下的Muse,文章编辑工具用的是Typora。主要参照教程如下，感兴趣的小伙伴可以康康：</p><ul><li><p><a href="https://zhuanlan.zhihu.com/p/102592286?utm_source=qq&utm_medium=social&utm_oi=1124773277125697536">从零开始搭建个人博客（超详细）</a></p></li><li><p><a href="https://zhuanlan.zhihu.com/p/69217131">网站ICP备案和公安备案流程</a></p></li><li><p><a href="https://www.jianshu.com/p/695283187b62">【官方支持】让个人域名下Github Pages完美支持https</a></p><p>注：教程有些bug，也可能与实际操作存在出入，不过应该都能百度解决，毕竟我就是这么干的😅(外加查看相关代码的说明文档)</p></li></ul><h3 id="In-the-end"><a href="#In-the-end" class="headerlink" title="In the end"></a>In the end</h3><p><em>Don’t try to understand it, feel it.</em></p>]]></content:encoded>
       
       
       
