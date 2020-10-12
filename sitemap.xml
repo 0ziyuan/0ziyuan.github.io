@@ -2,35 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2020/10/06/hello-world/</loc>
+    <loc>https://0-ziyuan.com/2020/10/06/hello-world/</loc>
     
     <lastmod>2020-10-09</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/about/index.html</loc>
+    <loc>https://0-ziyuan.com/about/index.html</loc>
     
     <lastmod>2020-10-08</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/resources/index.html</loc>
+    <loc>https://0-ziyuan.com/resources/index.html</loc>
     
     <lastmod>2020-10-06</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/tags/index.html</loc>
+    <loc>https://0-ziyuan.com/tags/index.html</loc>
     
     <lastmod>2020-10-06</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>https://0-ziyuan.com/categories/index.html</loc>
     
     <lastmod>2020-10-06</lastmod>
     
@@ -38,7 +38,7 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
+    <loc>https://0-ziyuan.com/</loc>
     <lastmod>2020-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
