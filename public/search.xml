@@ -15,6 +15,8 @@
           
           <category> 离散数学 </category>
           
+          <category> 集合论 </category>
+          
       </categories>
       
       
@@ -22,7 +24,7 @@
             
             <tag> 思维导图 </tag>
             
-            <tag> 集合论 </tag>
+            <tag> 基础知识 </tag>
             
         </tags>
       
@@ -42,6 +44,8 @@
           
           <category> 离散数学 </category>
           
+          <category> 关系 </category>
+          
       </categories>
       
       
@@ -49,7 +53,7 @@
             
             <tag> 思维导图 </tag>
             
-            <tag> 关系 </tag>
+            <tag> 基础知识 </tag>
             
         </tags>
       
@@ -69,6 +73,8 @@
           
           <category> 离散数学 </category>
           
+          <category> 推导与递归 </category>
+          
       </categories>
       
       
@@ -76,7 +82,7 @@
             
             <tag> 思维导图 </tag>
             
-            <tag> 推导与递归 </tag>
+            <tag> 基础知识 </tag>
             
         </tags>
       
@@ -96,6 +102,8 @@
           
           <category> 离散数学 </category>
           
+          <category> 图论 </category>
+          
       </categories>
       
       
@@ -103,7 +111,7 @@
             
             <tag> 思维导图 </tag>
             
-            <tag> 图论 </tag>
+            <tag> 基础知识 </tag>
             
         </tags>
       
@@ -123,6 +131,8 @@
           
           <category> 离散数学 </category>
           
+          <category> 逻辑基础 </category>
+          
       </categories>
       
       
@@ -130,7 +140,7 @@
             
             <tag> 思维导图 </tag>
             
-            <tag> 逻辑基础 </tag>
+            <tag> 基础知识 </tag>
             
         </tags>
       
@@ -150,6 +160,8 @@
           
           <category> 离散数学 </category>
           
+          <category> 算法 </category>
+          
       </categories>
       
       
@@ -157,7 +169,7 @@
             
             <tag> 思维导图 </tag>
             
-            <tag> 算法 </tag>
+            <tag> 基础知识 </tag>
             
         </tags>
       
