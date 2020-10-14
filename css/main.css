@@ -1195,7 +1195,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #dfbd37;
+  background: #1d38ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2507,12 +2507,7 @@ body {
   background-attachment: fixed;
   background-position: 50% 50%;
 }
-.content-wrap {
-  opacity: 0.9;
-}
-.sidebar {
-  opacity: 0.9;
-}
+#评论区参数,
 .comments {
   background: #fbf7f8;
   min-height: 10rem;
