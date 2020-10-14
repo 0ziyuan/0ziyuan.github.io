@@ -1195,7 +1195,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #12fffb;
+  background: #572d6f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2515,10 +2515,12 @@ body {
 }
 .comments {
   background: #fbf7f8;
-  opacity: 1;
-  min-height: 5rem;
+  min-height: 10rem;
   background-image: url("https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425091751.png");
-  background-size: contain;
+  background-size: 400px 300px;
+  background-repeat: no-repeat;
+  background-position: left top;
+  resize: none;
 }
 code {
   color: #ff7600;
