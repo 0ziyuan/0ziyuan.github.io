@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://0-ziyuan.com/resources/index.html</loc>
+    
+    <lastmod>2020-10-23</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://0-ziyuan.com/2020/10/22/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%94%9F%E6%AD%BB%E6%B8%B8%E6%88%8F/</loc>
+    
+    <lastmod>2020-10-23</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://0-ziyuan.com/2020/10/12/Algorithms/</loc>
     
     <lastmod>2020-10-23</lastmod>
@@ -51,23 +65,9 @@
   </url>
   
   <url>
-    <loc>https://0-ziyuan.com/2020/10/22/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%94%9F%E6%AD%BB%E6%B8%B8%E6%88%8F/</loc>
-    
-    <lastmod>2020-10-23</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://0-ziyuan.com/about/index.html</loc>
     
     <lastmod>2020-10-08</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://0-ziyuan.com/resources/index.html</loc>
-    
-    <lastmod>2020-10-06</lastmod>
     
   </url>
   
@@ -125,7 +125,7 @@
   </url>
   
   <url>
-    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E5%85%B3%E7%B3%BB/</loc>
+    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E6%8E%A8%E5%AF%BC%E4%B8%8E%E9%80%92%E5%BD%92/</loc>
     <lastmod>2020-10-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -139,14 +139,14 @@
   </url>
   
   <url>
-    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E9%9B%86%E5%90%88%E8%AE%BA/</loc>
+    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E5%85%B3%E7%B3%BB/</loc>
     <lastmod>2020-10-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E6%8E%A8%E5%AF%BC%E4%B8%8E%E9%80%92%E5%BD%92/</loc>
+    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E9%9B%86%E5%90%88%E8%AE%BA/</loc>
     <lastmod>2020-10-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
