@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://0-ziyuan.com/2020/10/06/hello-world/</loc>
+    <lastmod>2020-10-24</lastmod>
+  </url>
+  <url>
     <loc>https://0-ziyuan.com/2020/10/24/%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2020-10-24</lastmod>
   </url>
@@ -30,10 +34,6 @@
   </url>
   <url>
     <loc>https://0-ziyuan.com/2020/10/12/Induction-and-Recursion/</loc>
-    <lastmod>2020-10-23</lastmod>
-  </url>
-  <url>
-    <loc>https://0-ziyuan.com/2020/10/06/hello-world/</loc>
     <lastmod>2020-10-23</lastmod>
   </url>
 </urlset> 
