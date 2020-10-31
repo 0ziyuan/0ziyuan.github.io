@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011144230.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011144001.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"0-ziyuan.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="漫画：“排序算法” 大总结">
+<meta property="og:url" content="https://0-ziyuan.com/2020/10/31/%E6%BC%AB%E7%94%BB%EF%BC%9A%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D-%E5%A4%A7%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="子渊学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201031152128.jpeg">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrMWpNMG9WRTh3bW5MRm1PZlVaaWJJQldpYmV5Y1phekRlaWFzZnJtVUJjcWdLZFBLWk1SYVJsYW53LzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrUm9OeXRpYmd0NGJnYWxjNDR1OUhHN2lhYndEQXpUWW11R0xVN1UyamJrbWtjOWJJMWVuMzJmY3cvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrb2liMHp1aWF1WE82TDFsb2lhWWRKZVZLdkxEdUVDN2p3YmVnU1c2UlVETHhnOEZ2WVBnTTk4d293LzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRreUI4c0x5V2dhMVZmREVPWDBIUHlzcGZ0eXoyN3hNUmlhS3cyVE1TNUpIakxWWEFuaWFoVTVZaWJnLzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrUURBMHJmVXZSSFhCYWZhQkdNTFdCQUwzZWMzc1RYclFvVXRkaWFoV1dvSEtST2ljZUV6V3B0VWcvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrRm1maWMwUFlTeUFWNjVQU2RUZWRoUmlhZ2ZwUndkZUJ5aWNMQWFNT2JRajhKR29NWlFPTWZscDBnLzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrcVF4VTk1bG9WUXg5TjN3cGhQbU1MamhGa2ZnT0NqamVDVjlacXg2NlFIeGlhT1J4ZzNRTndEUS82NDA_d3hfZm10PWpwZWc?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrVmNKejNEMGliUE0ySkhJR3R3U2xZQ2lhRXJPZmxndHNOYm9EOGU1NEhWSVpJQmlhUWJoaWNKeW4xZy82NDA_d3hfZm10PWpwZWc?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRreTE4VXk0Q3d2czVJdW5OZ2Zoc2libUx4d1IwQTdJWWliaWF6V1RpYjlCRVJzWlBpYUNKTzJONWJidlEvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrWEVwMW5rREJjNUVrYWRaajE4YkFOVXBIaWFEOXprVEFFbm5QSzBzYTRIbEFubVBpYlg3R2gxZkEvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrb1dpYUZsVWliSkprNXRBOUNtdDJVbVEzeVE5a1VCbWtzNnd4a3RuUFRWaklaRTF4NlM3QUlEOXcvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrT1B3cFY1YWFKMmliN0k4ZXlIMDhNb1dMc0gyZHFQbmhRTmNoNG40eEF1dE92Vzhjb0I5bmJsdy82NDA_d3hfZm10PXBuZw?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrc0REYmhOV1g0a2JpYmliRWpWOWlhWmljazcwOGljSHBZaWNUMUN6MXhoMXpGTGZZNDMzZkZHd2VWQ2dnLzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrbGczWHdTd3E4aWNwV0VTUTY2S3FlenFkYkFKVkFpY2VUcEh5M0E5NWljT2ljaWJ5QW9uQjU2OEtENlEvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrZDJRNmljVXNQSFgxQ3U3OUlrVThpYjl2RUVpY0lpYVB5amlhamhMb0VXV2phR3JOR0tZUGliV2ZVUTlBLzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR3B2bE50ZmNNbFV2akRmR3c1N2ZHeWZIR3lVYVpVcW9FYWd0OXhQTGdBcVY2YkpGQVlFNVpYd0RxWmxybHdlRkhZMjYxUmNYd2ZMYXcvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrNkFUZ0JJZkJBbjJwRnJNYWVjaGZJTGFTUno4bmpMU3o5YWliNWpJWEFFZ2VzbGlhNENZdWdPNlEvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrM2t3dWM3M3VRWktURFBuU2NHYUtVYWo4aWJlVWptbFhXVkdpYjltMVA5UUJXWGxNM3NtdWdVcEEvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrck91R2ljb0lMVUNua1JlNUdaR0wyRlZBZEdZdmRZcmFzVFhvRzZqZkg5WkIycjA2TTcyWHV2dy82NDA_d3hfZm10PWpwZWc?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrY3NtSWdpYlRQdEZLVnV4d0JuQ2htMlVCcGNIaWFUNG1vTmdycGxGNERYdHlXdlRxUUlGN3RpYURBLzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrMjM5WXpIaWFGU0RRaWM3RUZNVmg4V1RPTlpvSk1UVXhHUU01NllkQmFPQzR5R0YwRkVFQkNib2cvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrNkZrNDU5ZEZUR3lpYThQYjFPTWliODZ0eXJTZUp3cFNXcUxUVnRoa3Q3ODBQdko5UVVwd0FIdHcvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrd0hlbE5UVUdpYmowYTQybGdsU1lQMlVjenFqSTBDZHR4OXJFMjk1aWN0YnBZa25VOFhFWmY2b2cvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrNmN6bjlkMkx5V2pBOWpQbzM5WG5WbWljTEc5c2s2aWFzaWFndFVHNzNmV1VJRzYycU55NHZUaWJBdy82NDA_d3hfZm10PWpwZWc?x-oss-process=image/format,png">
+<meta property="article:published_time" content="2020-10-31T06:16:38.000Z">
+<meta property="article:modified_time" content="2020-10-31T07:22:15.729Z">
+<meta property="article:author" content="0ziyuan">
+<meta property="article:tag" content="基础知识">
+<meta property="article:tag" content="转载">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201031152128.jpeg">
+
+<link rel="canonical" href="https://0-ziyuan.com/2020/10/31/%E6%BC%AB%E7%94%BB%EF%BC%9A%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D-%E5%A4%A7%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>漫画：“排序算法” 大总结 | 子渊学习笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="子渊学习笔记" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+            <a target="_blank" rel="noopener" href="https://github.com/0ziyuan" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><script>
+ function GetRandomNum(Min,Max)
+  {
+    var Range = Max - Min;
+    var Rand = Math.random();
+    return(Min + Math.round(Rand * Range));
+  }
+function setSidebarMarginTop (headerOffset) {
+    return $('#sidebar').css({ 'margin-top': headerOffset });
+  }
+ function getHeaderOffset () {
+    return $('.header-inner').height() + CONFIG.sidebar.offset;
+  }
+  window.onload=function(){
+    var subtitle = "断红一任风吹起，结习空时不点衣。W玉界琼田三万里，着我扁舟一叶。W醉后不知天在水，满船清梦压星河。W众里寻他千百度，蓦然回首，那人却在灯火阑珊处。W醉魂应逐凌波梦，分付西风此夜凉。W相逢细卜花间问，寒雨缘何带眼湿。";
+     var mytitle = subtitle.split("W");
+     var max = mytitle.length-1;
+     var index = GetRandomNum(0,max);
+     var text = mytitle[index];
+     $("#helloTitle").html(text);
+     var headOffset = getHeaderOffset();
+     setSidebarMarginTop(headOffset);
+     //动态subtitle设置
+  }
+</script>
+
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">子渊学习笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+
+       
+       
+       <p style="color:#777;font-family:STXingkai" id="helloTitle" class="site-subtitle"></p>
+        
+        
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="fa fa-download fa-fw"></i>资源</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://0-ziyuan.com/2020/10/31/%E6%BC%AB%E7%94%BB%EF%BC%9A%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D-%E5%A4%A7%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011143426.jpg">
+      <meta itemprop="name" content="0ziyuan">
+      <meta itemprop="description" content="Don't try to understand it, feel it.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="子渊学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          漫画：“排序算法” 大总结
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-31 14:16:38 / 修改时间：15:22:15" itemprop="dateCreated datePublished" datetime="2020-10-31T14:16:38+08:00">2020-10-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">排序算法</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/10/31/%E6%BC%AB%E7%94%BB%EF%BC%9A%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D-%E5%A4%A7%E6%80%BB%E7%BB%93/" class="post-meta-item leancloud_visitors" data-flag-title="漫画：“排序算法” 大总结" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/10/31/%E6%BC%AB%E7%94%BB%EF%BC%9A%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D-%E5%A4%A7%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/31/%E6%BC%AB%E7%94%BB%EF%BC%9A%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D-%E5%A4%A7%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k 字</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201031152128.jpeg"></p>
+<a id="more"></a>
+
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>本文转载自微信公众号 <strong>程序员小灰</strong>，系其原创文章，转载已征得作者本人同意，少许改动未涉及核心内容😀</p>
+<p>CSDN地址：<a target="_blank" rel="noopener" href="https://blog.csdn.net/bjweimengshu/article/details/103573147">https://blog.csdn.net/bjweimengshu/article/details/103573147</a></p>
+<h4 id="三个梯队"><a href="#三个梯队" class="headerlink" title="三个梯队"></a>三个梯队</h4><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrMWpNMG9WRTh3bW5MRm1PZlVaaWJJQldpYmV5Y1phekRlaWFzZnJtVUJjcWdLZFBLWk1SYVJsYW53LzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrUm9OeXRpYmd0NGJnYWxjNDR1OUhHN2lhYndEQXpUWW11R0xVN1UyamJrbWtjOWJJMWVuMzJmY3cvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrb2liMHp1aWF1WE82TDFsb2lhWWRKZVZLdkxEdUVDN2p3YmVnU1c2UlVETHhnOEZ2WVBnTTk4d293LzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRreUI4c0x5V2dhMVZmREVPWDBIUHlzcGZ0eXoyN3hNUmlhS3cyVE1TNUpIakxWWEFuaWFoVTVZaWJnLzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrUURBMHJmVXZSSFhCYWZhQkdNTFdCQUwzZWMzc1RYclFvVXRkaWFoV1dvSEtST2ljZUV6V3B0VWcvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png"></p>
+<h4 id="第三梯队"><a href="#第三梯队" class="headerlink" title="第三梯队"></a>第三梯队</h4><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrRm1maWMwUFlTeUFWNjVQU2RUZWRoUmlhZ2ZwUndkZUJ5aWNMQWFNT2JRajhKR29NWlFPTWZscDBnLzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png"></p>
+<h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a><strong>冒泡排序</strong></h5><p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&chksm=8c99fb70bbee72668cad223892ad362525d215e7f936458f99dd289eb82981099359310e9e54&idx=1&mid=2653194666&scene=21&sn=69ce32870c0b981c40b1e124fbb6bba8#wechat_redirect">漫画：什么是冒泡排序？</a></p>
+<h5 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a><strong>选择排序</strong></h5><p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&chksm=8c99e855bbee61439086680ceefef33c56038c5d552ae64c1d6135abe467b617aa62f4934f36&idx=1&mid=2653198991&scene=21&sn=7f98d59898a911e1425baa6cc180c598#wechat_redirect">漫画：什么是选择排序？</a></p>
+<h5 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a><strong>插入排序</strong></h5><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bjweimengshu/article/details/99372874">漫画：什么是插入排序？</a></p>
+<h5 id="鸡尾酒排序"><a href="#鸡尾酒排序" class="headerlink" title="鸡尾酒排序"></a><strong>鸡尾酒排序</strong></h5><p>冒泡排序的变种</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&chksm=8c99f87dbbee716b531df3fcf5882998f28794aad5609f225883d6c2dc71ba51b8a5126b32be&idx=2&mid=2653194919&scene=21&sn=f473bc9e0da124a303312a11902e2f52#wechat_redirect">漫画：什么是鸡尾酒排序？</a></p>
+<h5 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h5><p>平均时间复杂度都是<strong>O（n^2）</strong></p>
+<h5 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h5><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrcVF4VTk1bG9WUXg5TjN3cGhQbU1MamhGa2ZnT0NqamVDVjlacXg2NlFIeGlhT1J4ZzNRTndEUS82NDA_d3hfZm10PWpwZWc?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrVmNKejNEMGliUE0ySkhJR3R3U2xZQ2lhRXJPZmxndHNOYm9EOGU1NEhWSVpJQmlhUWJoaWNKeW4xZy82NDA_d3hfZm10PWpwZWc?x-oss-process=image/format,png"></p>
+<h6 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h6><p><strong>冒泡排序</strong>和<strong>插入排序</strong>的元素比较交换次数取决于原始数组的<strong>有序程度</strong>。</p>
+<p>如果原始数组本来已经接近有序，只需要较少的比较交换次数即可完成排序。比如下面这个数组，只有7和8是逆序的：</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRreTE4VXk0Q3d2czVJdW5OZ2Zoc2libUx4d1IwQTdJWWliaWF6V1RpYjlCRVJzWlBpYUNKTzJONWJidlEvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png"></p>
+<p>如果原始数组大部分元素无序，则需要较多的比较交换次数。比如下面这个数组，绝大部分元素都是无序的：</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrWEVwMW5rREJjNUVrYWRaajE4YkFOVXBIaWFEOXprVEFFbm5QSzBzYTRIbEFubVBpYlg3R2gxZkEvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png"></p>
+<p>在此基础上，<strong>插入排序的性能略高于冒泡排序</strong>。为什么这么说呢？因为冒泡排序每两个元素之间的交换是彼此独立的，比如A和B交换，B和C交换，C和D交换：</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrb1dpYUZsVWliSkprNXRBOUNtdDJVbVEzeVE5a1VCbWtzNnd4a3RuUFRWaklaRTF4NlM3QUlEOXcvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png"></p>
+<p>而插入排序的元素交换是连续的，比如把B赋值给A，把C赋值给B，把D赋值给C，最后把A赋值给D：</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrT1B3cFY1YWFKMmliN0k4ZXlIMDhNb1dMc0gyZHFQbmhRTmNoNG40eEF1dE92Vzhjb0I5bmJsdy82NDA_d3hfZm10PXBuZw?x-oss-process=image/format,png"></p>
+<p>显然，归并排序的连续交换方式省去了许多无谓的交换操作。</p>
+<p>再来说说选择排序，选择排序和前面两者不太一样，<strong>它的元素比较交换次数是固定的，和原始数组的有序程度无关</strong>。</p>
+<p>因此，<strong>当原始数组接近有序时，插入排序性能最优；当原始数组大部分元素无序时，选择排序性能最优</strong>。</p>
+<h6 id="排序的稳定性"><a href="#排序的稳定性" class="headerlink" title="排序的稳定性"></a>排序的稳定性</h6><p><strong>冒泡排序和插入排序是稳定排序</strong>，值相同的元素在排序后仍然保持原本的先后顺序。</p>
+<p><strong>选择排序是不稳定排序</strong>，值相同的元素在排序后不一定保持原本的先后顺序。</p>
+<h4 id="第二梯队"><a href="#第二梯队" class="headerlink" title="第二梯队"></a>第二梯队</h4><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrc0REYmhOV1g0a2JpYmliRWpWOWlhWmljazcwOGljSHBZaWNUMUN6MXhoMXpGTGZZNDMzZkZHd2VWQ2dnLzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png"></p>
+<h5 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a><strong>希尔排序</strong></h5><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bjweimengshu/article/details/100681410">漫画：什么是希尔排序？</a></p>
+<h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a><strong>快速排序</strong></h5><p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&chksm=8c99f9f8bbee70eef627d0f5e5b80a604221abb3a1b5617b397fa178582dcb063c9fb6f904b3&idx=1&mid=2653195042&scene=21&sn=2b0915cd2298be9f2163cc90a3d464da#wechat_redirect">漫画：什么是快速排序？</a></p>
+<h5 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a><strong>归并排序</strong></h5><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bjweimengshu/article/details/102384930">漫画：什么是归并排序？</a></p>
+<h5 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a><strong>堆排序</strong></h5><p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&chksm=8c99f912bbee7004625a0b204acc8484acbdf4f1b18953e7ff5acbea958ec002d8c8ea072792&idx=1&mid=2653195208&scene=21&sn=e3d6559402148458f0a4993b47d8bc6f#wechat_redirect">漫画：什么是堆排序？</a></p>
+<h5 id="共同点-1"><a href="#共同点-1" class="headerlink" title="共同点"></a>共同点</h5><p>它们的性能比第三梯队要高一个量级，其中希尔排序的平均时间复杂度最快可以达到<strong>O（n^1.3）</strong>，快速排序、归并排序、堆排序的平均时间复杂度是<strong>O（nlogn）</strong>。</p>
+<h5 id="差异-1"><a href="#差异-1" class="headerlink" title="差异"></a>差异</h5><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrbGczWHdTd3E4aWNwV0VTUTY2S3FlenFkYkFKVkFpY2VUcEh5M0E5NWljT2ljaWJ5QW9uQjU2OEtENlEvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrZDJRNmljVXNQSFgxQ3U3OUlrVThpYjl2RUVpY0lpYVB5amlhamhMb0VXV2phR3JOR0tZUGliV2ZVUTlBLzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png"></p>
+<h6 id="性能分析-1"><a href="#性能分析-1" class="headerlink" title="性能分析"></a>性能分析</h6><p>虽然快速排序的平均时间复杂度是O（nlogn），但是在极端情况下，<strong>最坏时间复杂度是O（n^2）</strong>。</p>
+<p>而归并排序和堆排序的时间复杂度稳定在O（nlogn）。</p>
+<p>至于平均时间复杂度，虽然三者同样都是O（nlogn），但是堆排序比前两者的性能略低一些。为什么呢？主要是由于<strong>二叉堆的父子节点在内存中并不连续</strong>。</p>
+<p>在访问内存数据时，对于顺序存储的数据，读写效率往往是最高的。根据CPU的<strong>空间局部性原理</strong>，CPU在每次访问数据的时候，会把内存中相邻的数据也一并存入缓存。这样一来，CPU以后再访问邻近的数据就不需要重新访问内存，而是访问CPU缓存，从而大大提升了程序执行的效率。</p>
+<p>下图是有些夸张的示意：</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR3B2bE50ZmNNbFV2akRmR3c1N2ZHeWZIR3lVYVpVcW9FYWd0OXhQTGdBcVY2YkpGQVlFNVpYd0RxWmxybHdlRkhZMjYxUmNYd2ZMYXcvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png"></p>
+<p>在堆排序的过程中，常常需要父子节点之间进行比较和交换，而父子节点在数组中的位置并不是相邻，而是相差两倍左右：</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrNkFUZ0JJZkJBbjJwRnJNYWVjaGZJTGFTUno4bmpMU3o5YWliNWpJWEFFZ2VzbGlhNENZdWdPNlEvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png"></p>
+<p>反观快速排序和归并排序，无论是快速排序中把元素移动到pivot两侧，还是进行归并排序中的merge操作，都是按照数组元素的自然顺序依次进行比较和交换操作。</p>
+<p>因此，<strong>堆排序的平均性能比快速排序和归并排序略低。</strong></p>
+<h6 id="排序的稳定性-1"><a href="#排序的稳定性-1" class="headerlink" title="排序的稳定性"></a>排序的稳定性</h6><p>归并排序是<strong>稳定排序</strong>，快速排序和堆排序是<strong>不稳定排序</strong>。</p>
+<p>此外，快速排序和堆排序是<strong>原地排序</strong>，不需要开辟额外空间。而归并排序是<strong>非原地排序</strong>，在merge操作的时候需要借助额外的辅助数组来完成。</p>
+<h4 id="第一梯队"><a href="#第一梯队" class="headerlink" title="第一梯队"></a>第一梯队</h4><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrM2t3dWM3M3VRWktURFBuU2NHYUtVYWo4aWJlVWptbFhXVkdpYjltMVA5UUJXWGxNM3NtdWdVcEEvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png"></p>
+<h5 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a><strong>计数排序</strong></h5><p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&chksm=8c99ffd7bbee76c1d2e2e9b198259795285ec2c305d3613a5e39622195fd1c32bb6dbe52fa08&idx=1&mid=2653195533&scene=21&sn=02918dc51b07837ce1119f00d7900dbc#wechat_redirect">漫画：什么是计数排序？</a></p>
+<h5 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a><strong>桶排序</strong></h5><p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&chksm=8c99ffe4bbee76f23d16ac1e0c7feeb16654ebb75e40d92c911bffa113059f52ce4508281a55&idx=1&mid=2653195582&scene=21&sn=1e7ece4e48c20fb994e2cefdcbdce4c5#wechat_redirect">漫画：什么是桶排序？</a></p>
+<h5 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a><strong>基数排序</strong></h5><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bjweimengshu/article/details/102908292">漫画：什么是基数排序？</a></p>
+<h5 id="共同点-2"><a href="#共同点-2" class="headerlink" title="共同点"></a>共同点</h5><p>它们的性能比第二梯队又要高出一个量级，都属于<strong>线性时间复杂度</strong>的排序算法。</p>
+<p>三种排序算法都属于<strong>稳定排序</strong>。</p>
+<h5 id="差异-2"><a href="#差异-2" class="headerlink" title="差异"></a>差异</h5><p>虽然计数排序、桶排序、基数排序同为线性排序算法，但它们的时间复杂度有着很大不同：</p>
+<p>计数排序的时间复杂度是<strong>O（n+m）</strong>，其中m是原始数组的整数范围。</p>
+<p>桶排序的时间复杂度是<strong>O（n）</strong>，这是在分桶数量是n的前提下。</p>
+<p>基数排序的时间复杂度是<strong>O（k（n+m））</strong>，其中k是元素的最大位数，m是每一位的取值范围。</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrck91R2ljb0lMVUNua1JlNUdaR0wyRlZBZEdZdmRZcmFzVFhvRzZqZkg5WkIycjA2TTcyWHV2dy82NDA_d3hfZm10PWpwZWc?x-oss-process=image/format,png"></p>
+<p><strong>睡眠排序</strong></p>
+<p><strong>猴子排序</strong></p>
+<p><strong>珠排序</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bjweimengshu/article/details/103360199">漫画：三种 “奇葩” 的排序算法</a></p>
+<p>这三种排序算法体现出了发明者天马行空的想象力，大家可以拿来娱乐一下，但是在现实工作中如有排序需求，可千万不要调用它们啊！</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrY3NtSWdpYlRQdEZLVnV4d0JuQ2htMlVCcGNIaWFUNG1vTmdycGxGNERYdHlXdlRxUUlGN3RpYURBLzY0MD93eF9mbXQ9anBlZw?x-oss-process=image/format,png"></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrMjM5WXpIaWFGU0RRaWM3RUZNVmg4V1RPTlpvSk1UVXhHUU01NllkQmFPQzR5R0YwRkVFQkNib2cvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrNkZrNDU5ZEZUR3lpYThQYjFPTWliODZ0eXJTZUp3cFNXcUxUVnRoa3Q3ODBQdko5UVVwd0FIdHcvNjQwP3d4X2ZtdD1wbmc?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrd0hlbE5UVUdpYmowYTQybGdsU1lQMlVjenFqSTBDZHR4OXJFMjk1aWN0YnBZa25VOFhFWmY2b2cvNjQwP3d4X2ZtdD1qcGVn?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9OdE81c2lhbEpaR29wcTRsSEtHcnpwU3JncklnWFdpYWRrNmN6bjlkMkx5V2pBOWpQbzM5WG5WbWljTEc5c2s2aWFzaWFndFVHNzNmV1VJRzYycU55NHZUaWJBdy82NDA_d3hfZm10PWpwZWc?x-oss-process=image/format,png"></p>
+
+    </div>
+
+    
+    
+    
+
+    
+       <div>
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-hourglass-end"></i>感谢您的阅读-------------</div>
+    
+</div>
+       </div>
+    
+      
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\10\12\Set-Theory\" rel="bookmark">Set Theory</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\10\12\Relations\" rel="bookmark">Relations</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\10\12\Induction-and-Recursion\" rel="bookmark">Induction and  Recursion</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\10\12\Graph-Theory\" rel="bookmark">Graph Theory</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\10\12\Foundations-of-Logic\" rel="bookmark">Foundations of Logic</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>0ziyuan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="/2020/10/31/%E6%BC%AB%E7%94%BB%EF%BC%9A%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D-%E5%A4%A7%E6%80%BB%E7%BB%93/" title="漫画：“排序算法” 大总结">https://0-ziyuan.com/2020/10/31/漫画：“排序算法”-大总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/rss2.xml">
+            <span class="icon">
+              <i class="fas fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag"><i class="fa fa-tag"></i> 基础知识</a>
+              <a href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag"><i class="fa fa-tag"></i> 转载</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/30/git%E5%AD%A6%E4%B9%A0%E5%AF%BC%E5%BC%95/" rel="prev" title="git学习导引">
+      <i class="fa fa-chevron-left"></i> git学习导引
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E4%B8%AA%E6%A2%AF%E9%98%9F"><span class="nav-number">2.</span> <span class="nav-text">三个梯队</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%A2%AF%E9%98%9F"><span class="nav-number">3.</span> <span class="nav-text">第三梯队</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-number">3.1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="nav-number">3.2.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-number">3.3.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%B8%A1%E5%B0%BE%E9%85%92%E6%8E%92%E5%BA%8F"><span class="nav-number">3.4.</span> <span class="nav-text">鸡尾酒排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B1%E5%90%8C%E7%82%B9"><span class="nav-number">3.5.</span> <span class="nav-text">共同点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B7%AE%E5%BC%82"><span class="nav-number">3.6.</span> <span class="nav-text">差异</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-number">3.6.1.</span> <span class="nav-text">性能分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-number">3.6.2.</span> <span class="nav-text">排序的稳定性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%A2%AF%E9%98%9F"><span class="nav-number">4.</span> <span class="nav-text">第二梯队</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F"><span class="nav-number">4.1.</span> <span class="nav-text">希尔排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="nav-number">4.2.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="nav-number">4.3.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F"><span class="nav-number">4.4.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B1%E5%90%8C%E7%82%B9-1"><span class="nav-number">4.5.</span> <span class="nav-text">共同点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B7%AE%E5%BC%82-1"><span class="nav-number">4.6.</span> <span class="nav-text">差异</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90-1"><span class="nav-number">4.6.1.</span> <span class="nav-text">性能分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7-1"><span class="nav-number">4.6.2.</span> <span class="nav-text">排序的稳定性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%A2%AF%E9%98%9F"><span class="nav-number">5.</span> <span class="nav-text">第一梯队</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F"><span class="nav-number">5.1.</span> <span class="nav-text">计数排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A1%B6%E6%8E%92%E5%BA%8F"><span class="nav-number">5.2.</span> <span class="nav-text">桶排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F"><span class="nav-number">5.3.</span> <span class="nav-text">基数排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B1%E5%90%8C%E7%82%B9-2"><span class="nav-number">5.4.</span> <span class="nav-text">共同点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B7%AE%E5%BC%82-2"><span class="nav-number">5.5.</span> <span class="nav-text">差异</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="0ziyuan"
+      src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011143426.jpg">
+  <p class="site-author-name" itemprop="name">0ziyuan</p>
+  <div class="site-description" itemprop="description">Don't try to understand it, feel it.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/0ziyuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;0ziyuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wanli@0-ziyuan.com" title="E-Mail → mailto:wanli@0-ziyuan.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://i.csdn.net/#/uc/profile/Later_001" title="CSDN → https:&#x2F;&#x2F;i.csdn.net&#x2F;#&#x2F;uc&#x2F;profile&#x2F;Later_001" rel="noopener" target="_blank"><i class="fab fa-codiepie fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://gatsby.fun/" title="http:&#x2F;&#x2F;gatsby.fun" rel="noopener" target="_blank">Gatsby's Blog</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <div class="copyright">
+  
+  &copy; 2020-10-6 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">0ziyuan |</span>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+</div>
+
+
+
+
+
+    <div class="busuanzi-count">
+    <script async="" src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <!-- 博客字数统计 -->
+    <span class="site-pv">
+      <i class="fa fa-chart-area"></i>
+      全站共<span class="post-count">4.5k</span>字 
+    </span>
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      访问用户:<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i>
+      访问次数:<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
+</div>
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">黔ICP备2020009370号</a>  | </span>
+      <img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201013163620.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=%E8%B4%B5%E5%85%AC%E7%BD%91%E5%AE%89%E5%A4%87" rel="noopener" target="_blank">贵公网安备52230102000219号</a>
+  <div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'Csy3blPagD2jJu1oKasQnYFx-9Nh9j0Va',
+      appKey     : 'VS8OlWWswHz3EJjEoWOm9Npg',
+      placeholder: "发条友善的评论~",
+      avatar     : 'monsterid',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
