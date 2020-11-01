@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #8afbff;
+  background: #0e941a;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2600,7 +2600,7 @@ pre {
 /* 适配手机样式 began ------------------------> */
 @media (max-width: 767px) {
   body {
-    background-image: none;
+    background-image: url("https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201101222343.jpg");
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -2862,21 +2862,6 @@ pre {
     margin: 30px;
     text-align: center;
     border-top: 0px;
-  }
-  #top p {
-    font-size: 12px;
-    display: block;
-  }
-  .post-body .note {
-    margin: 10px auto;
-    font-size: 14px;
-  }
-  .post-body .note.info p {
-    font-size: 13px;
-  }
-  .post-body .tabs .tab-content .note {
-    margin: 10px auto;
-    font-size: 14px;
   }
 }
 @media (max-width: 767px) {
