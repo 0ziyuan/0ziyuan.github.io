@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
@@ -20,7 +20,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"0-ziyuan.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+    var CONFIG = {"hostname":"0-ziyuan.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
   <meta name="description" content="Don&#39;t try to understand it, feel it.">
@@ -176,6 +176,11 @@ function setSidebarMarginTop (headerOffset) {
         <li class="menu-item menu-item-resources">
 
     <a href="/resources/" rel="section"><i class="fa fa-download fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-address-book fa-fw"></i>友链</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -469,16 +474,39 @@ function setSidebarMarginTop (headerOffset) {
   </div>
 
 
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      友情链接
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+         
+        
+          <li>
+            <a href="/2020/10/31/%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D%E5%B0%8F%E7%BB%93/" title="“排序算法”小结" target="_blank">“排序算法”小结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/30/git%E5%AD%A6%E4%B9%A0%E5%AF%BC%E5%BC%95/" title="git学习导引" target="_blank">git学习导引</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/24/%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/" title="拼图游戏" target="_blank">拼图游戏</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/22/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%94%9F%E6%AD%BB%E6%B8%B8%E6%88%8F/" title="约瑟夫生死游戏" target="_blank">约瑟夫生死游戏</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/12/Set-Theory/" title="Set Theory" target="_blank">Set Theory</a>
+          </li>
+        
+      </ul>
     </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="http://gatsby.fun/" title="http:&#x2F;&#x2F;gatsby.fun" rel="noopener" target="_blank">Gatsby's Blog</a>
-        </li>
-    </ul>
-  </div>
+
 
       </div>
 
@@ -515,7 +543,7 @@ function setSidebarMarginTop (headerOffset) {
       <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-chart-area"></i>
-      全站共<span class="post-count">4.5k</span>字 
+      全站共<span class="post-count">4.4k</span>字 
     </span>
     <span class="site-uv">
       <i class="fa fa-user"></i>
@@ -666,6 +694,23 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   }, window.Valine);
 });
 </script>
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

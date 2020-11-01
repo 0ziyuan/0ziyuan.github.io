@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
@@ -20,7 +20,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"0-ziyuan.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+    var CONFIG = {"hostname":"0-ziyuan.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
   <meta property="og:type" content="article">
@@ -192,6 +192,11 @@ function setSidebarMarginTop (headerOffset) {
     <a href="/resources/" rel="section"><i class="fa fa-download fa-fw"></i>资源</a>
 
   </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-address-book fa-fw"></i>友链</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -325,14 +330,14 @@ function setSidebarMarginTop (headerOffset) {
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k 字</span>
+              <span>982 字</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4分钟</span>
+              <span>3分钟</span>
             </span>
 
         </div>
@@ -365,11 +370,11 @@ function setSidebarMarginTop (headerOffset) {
 <h4 id="边界测试Debug"><a href="#边界测试Debug" class="headerlink" title="边界测试Debug"></a>边界测试Debug</h4><h5 id="鼠标点击原图片"><a href="#鼠标点击原图片" class="headerlink" title="鼠标点击原图片"></a>鼠标点击原图片</h5><h6 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h6><p>当原图片右侧为空白块时，点击原图片，二者发生奇怪的交换，bug如下图</p>
 <p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201025003055.png"></p>
 <h6 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h6><p>对交换图片的条件作进一步限制</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*游戏过程*&#x2F;</span><br><span class="line">void MouseEvent(int x, int y, int button, int event)</span><br><span class="line">&#123;</span><br><span class="line">    int r, c;</span><br><span class="line">    &#x2F;&#x2F;修改为if (x &lt; (WNDWIDTH - SIZE) &amp;&amp; (button &#x3D;&#x3D; LEFT_BUTTON &amp;&amp; event &#x3D;&#x3D; BUTTON_DOWN))</span><br><span class="line">    if (button &#x3D;&#x3D; LEFT_BUTTON &amp;&amp; event &#x3D;&#x3D; BUTTON_DOWN)</span><br><span class="line">    &#123;</span><br><span class="line">        c &#x3D; y &#x2F; SIZE;</span><br><span class="line">        r &#x3D; x &#x2F; SIZE;</span><br><span class="line">        if ((r&#x3D;&#x3D;r0&amp;&amp;c&#x3D;&#x3D;c0-1)||(r&#x3D;&#x3D;r0&amp;&amp;c&#x3D;&#x3D;c0+1)||   &#x2F;&#x2F;通过鼠标点击时的坐标与空白块坐标比对，判断是否可交换</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*游戏过程*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MouseEvent</span>(<span class="params"><span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> button, <span class="keyword">int</span> <span class="keyword">event</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> r, c;</span><br><span class="line">    <span class="comment">//修改为if (x &lt; (WNDWIDTH - SIZE) &amp;&amp; (button == LEFT_BUTTON &amp;&amp; event == BUTTON_DOWN))</span></span><br><span class="line">    <span class="keyword">if</span> (button == LEFT_BUTTON &amp;&amp; <span class="keyword">event</span> == BUTTON_DOWN)</span><br><span class="line">    &#123;</span><br><span class="line">        c = y / SIZE;</span><br><span class="line">        r = x / SIZE;</span><br><span class="line">        <span class="keyword">if</span> ((r==r0&amp;&amp;c==c0<span class="number">-1</span>)||(r==r0&amp;&amp;c==c0+<span class="number">1</span>)||   <span class="comment">//通过鼠标点击时的坐标与空白块坐标比对，判断是否可交换</span></span><br></pre></td></tr></table></figure>
 
 <h5 id="拼图完成后鼠标移动"><a href="#拼图完成后鼠标移动" class="headerlink" title="拼图完成后鼠标移动"></a>拼图完成后鼠标移动</h5><h6 id="Bug-1"><a href="#Bug-1" class="headerlink" title="Bug"></a>Bug</h6><p>拼图完成后将播放音乐，但鼠标移动会再次触发监听，反复重播音乐，影响体验。</p>
 <h6 id="Debug-1"><a href="#Debug-1" class="headerlink" title="Debug"></a>Debug</h6><p>声明一个全局变量boolean suc = true;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;判断拼图是否复原</span><br><span class="line">int count &#x3D; 0;</span><br><span class="line">for (int i &#x3D; 0; i &lt; ROW; i++)</span><br><span class="line">    for (int j &#x3D; 0; j &lt; COL; j++)</span><br><span class="line">        if (map[i][j] &#x3D;&#x3D; i + j * ROW)&#x2F;&#x2F;将map数组中的值与初始值比较，从而判断</span><br><span class="line">            count++;</span><br><span class="line">if (count &#x3D;&#x3D; ROW * COL)</span><br><span class="line">&#123;</span><br><span class="line">    if (suc)</span><br><span class="line">    &#123;</span><br><span class="line">        char str[50];</span><br><span class="line">        playSound(winsound, 1);</span><br><span class="line">        sprintf_s(str, 50, &quot;拼图完成&quot;);</span><br><span class="line">        beginPaint();</span><br><span class="line">        setTextSize(40);</span><br><span class="line">        paintText(WNDWIDTH - 180, 20, str);&#x2F;&#x2F;绘制文字</span><br><span class="line">        endPaint();</span><br><span class="line">        suc &#x3D; false;&#x2F;&#x2F;使得成功效果只触发一次</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断拼图是否复原</span></span><br><span class="line"><span class="built_in">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; ROW; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; COL; j++)</span><br><span class="line">        <span class="keyword">if</span> (map<span class="literal">[<span class="identifier">i</span>]</span><span class="literal">[<span class="identifier">j</span>]</span><span class="operator"> == </span>i + j<span class="operator"> * </span>ROW)<span class="comment">//将map数组中的值与初始值比较，从而判断</span></span><br><span class="line">            count++;</span><br><span class="line"><span class="keyword">if</span> (count<span class="operator"> == </span>ROW<span class="operator"> * </span>COL)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (suc)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">char</span> str<span class="literal">[<span class="number">50</span>]</span>;</span><br><span class="line">        play<span class="constructor">Sound(<span class="params">winsound</span>, 1)</span>;</span><br><span class="line">        sprintf<span class="constructor">_s(<span class="params">str</span>, 50, <span class="string">&quot;拼图完成&quot;</span>)</span>;</span><br><span class="line">        <span class="keyword">begin</span><span class="constructor">Paint()</span>;</span><br><span class="line">        set<span class="constructor">TextSize(40)</span>;</span><br><span class="line">        paint<span class="constructor">Text(WNDWIDTH - 180, 20, <span class="params">str</span>)</span>;<span class="comment">//绘制文字</span></span><br><span class="line">        <span class="keyword">end</span><span class="constructor">Paint()</span>;</span><br><span class="line">        suc = <span class="literal">false</span>;<span class="comment">//使得成功效果只触发一次</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h4><p>1.程序成功运行，拼图已打乱，并已加载绘制，原图片绘制在窗口右侧。</p>
 <p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201024233014.png"></p>
@@ -556,16 +561,39 @@ function setSidebarMarginTop (headerOffset) {
   </div>
 
 
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      友情链接
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+         
+        
+          <li>
+            <a href="/2020/10/31/%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D%E5%B0%8F%E7%BB%93/" title="“排序算法”小结" target="_blank">“排序算法”小结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/30/git%E5%AD%A6%E4%B9%A0%E5%AF%BC%E5%BC%95/" title="git学习导引" target="_blank">git学习导引</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/24/%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/" title="拼图游戏" target="_blank">拼图游戏</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/22/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%94%9F%E6%AD%BB%E6%B8%B8%E6%88%8F/" title="约瑟夫生死游戏" target="_blank">约瑟夫生死游戏</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/12/Set-Theory/" title="Set Theory" target="_blank">Set Theory</a>
+          </li>
+        
+      </ul>
     </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="http://gatsby.fun/" title="http:&#x2F;&#x2F;gatsby.fun" rel="noopener" target="_blank">Gatsby's Blog</a>
-        </li>
-    </ul>
-  </div>
+
 
       </div>
 
@@ -602,7 +630,7 @@ function setSidebarMarginTop (headerOffset) {
       <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-chart-area"></i>
-      全站共<span class="post-count">4.5k</span>字 
+      全站共<span class="post-count">4.4k</span>字 
     </span>
     <span class="site-uv">
       <i class="fa fa-user"></i>
@@ -753,6 +781,23 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   }, window.Valine);
 });
 </script>
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
