@@ -300,8 +300,23 @@ function setSidebarMarginTop (headerOffset) {
                 transform: scale(1.1);
                 background: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
                 box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
-            }
-            .card a {
+                /*动画效果*/
+                color: rgba(0,0,0,0.1);  /*transparent IE 不支持*/
+                animation: hue 1.5s liner infinite;
+                backgroung-imge: linear-gragient(
+                    to right,
+                    #fffed4,
+                    #fffede,
+                    #fdffe2,
+                    #f7ffec,
+                    #ecfaf3,
+                    #f1fffd,
+                    #fafbff,
+                    #f7fffc,
+                    #fffee4
+     );
+}
+            .card a, .card a:hover{
                 border:none;
             }
             .card .ava {
@@ -314,7 +329,7 @@ function setSidebarMarginTop (headerOffset) {
             }
             .card .card-header {
                 font-style: italic;
-                overflow: auto;
+                overflow: hidden;
                 width: 236px;
             }
             .card .card-header a {
@@ -335,7 +350,45 @@ function setSidebarMarginTop (headerOffset) {
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
-            }
+ }
+ span.focus-links {
+     font-style: normal;
+     margin-left: 10px;
+     position: unset;
+     left: 0;
+     padding: 0 7px 0 5px;
+     font-size: 11px;
+     border-color: #42c02e;
+     border-radius: 40px;
+     line-height: 24px;
+     height: 22px;
+     color: #fff !important;
+     background-color: #42c02e;
+     display: inline-block;
+ }
+ span.focus-links:hover{
+     background-color: #318024;
+ }
+ .friends-btn{
+     text-align: center;
+     color: #555 !important;
+     background-color: #fff;
+     border-radius: 3px;
+     font-size: 15px;
+     box-shadow: inset 0 0 10px 0 rgba(0,0,0,.35);
+     border: none!important;
+     transition-property: unset;
+     padding: 0 15px;
+     margin: inherit;
+ }   
+ .friends-btn:hover{
+   color: rgb(255, 255, 255) !important;
+   border-radius: 3px;
+   font-size: 15px;
+   box-shadow: inset 0 0 10px 0 rgba(0,0,0,.35);
+   background-image: liner-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+   margin: inherit;
+ }
         </style>
         <div class="links-content">
             <div class="link-navigation">

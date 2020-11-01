@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0f220d;
+  background: #79283e;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2577,6 +2577,8 @@ body {
   background-size: 400px 300px;
   background-repeat: no-repeat;
   background-position: left top;
+  border-radius: 8px;
+  border: 1px solid #fffeff;
   resize: none;
 }
 code {
@@ -2595,3 +2597,326 @@ code,
 pre {
   border: 1px solid #d6d6d6;
 }
+/* 适配手机样式 began ------------------------> */
+@media (max-width: 767px) {
+  body {
+    background-image: none;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #34495e;
+  }
+  .menu {
+    display: flex;
+    margin-left: 5px;
+    float: none !important;
+  }
+  .menu .menu-item a {
+/*font-weight: 600;*/
+    color: #2c3e50;
+    font-size: 14px;
+    padding: 5px 12px;
+  }
+  .menu-item-active a:after {
+    top: -10%;
+    right: 24px;
+  }
+  blockquote p {
+    font-size: 13px;
+  }
+  .back-to-top {
+    display: none;
+    right: 0px;
+    opacity: 0.2;
+  }
+  .posts-expand .post-body h1 {
+    margin: 0 0 0em;
+  }
+  .posts-expand .post-body h2,
+  .posts-expand .post-body h3 {
+    pointer-events: none;
+  }
+  .posts-expand .post-body h1,
+  .posts-expand .post-body h2,
+  .posts-expand .post-body h3,
+  .posts-expand .post-body h4 {
+    pointer-events: auto;
+    color: #2c3e50;
+  }
+  .posts-expand .post-body h1:before,
+  .posts-expand .post-body h2:before,
+  .posts-expand .post-body h3:before,
+  .posts-expand .post-body h4:before,
+  .posts-expand .post-body h5:before,
+  .posts-expand .post-body h6:before {
+    display: none;
+  }
+  .posts-expand .post-body h2 {
+    padding-bottom: 0.7em;
+    border-bottom: 1px solid #ddd;
+  }
+  .posts-expand .post-body h3 {
+    line-height: 1.2;
+    position: relative;
+  }
+  .posts-expand .post-body h3 > a:before {
+    content: "";
+    color: #42b983;
+    position: absolute;
+    left: -0.7em;
+    margin-top: -0.05em;
+    padding-right: 0.5em;
+    font-size: 1.2em;
+    line-height: 1;
+    font-weight: bold;
+  }
+  .posts-expand .post-body p {
+    line-height: 1.6em;
+    text-align: left;
+    font-size: 14px;
+    margin: 5px 0;
+    padding-bottom: 6px;
+    position: relative;
+    z-index: 1;
+    color: #5e6d82;
+  }
+  .posts-expand .post-body ul,
+  .posts-expand .post-body ol {
+    position: inherit;
+  }
+  .posts-expand .post-body ul ul,
+  .posts-expand .post-body ol ul,
+  .posts-expand .post-body ul ol,
+  .posts-expand .post-body ol ol {
+    margin: 0;
+  }
+  .posts-expand .post-body ul li {
+    font-size: 13px;
+    color: #5e6d82;
+  }
+  .posts-expand .post-body a {
+    font-weight: 400;
+  }
+  p {
+    line-height: 1.6em;
+    margin: 1.2em 0 -1.2em;
+    padding-bottom: 1.2em;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    word-spacing: 0.05em;
+  }
+  li {
+    font-size: 14px;
+    color: #5e6d82;
+  }
+  .post-button a {
+    font-size: 16px;
+  }
+  .posts-expand .post-meta {
+    font-size: 8px;
+    text-align: center;
+    margin: 1px 0 20px 0;
+  }
+  .page-post-detail .post-meta {
+    margin: 10px 0px;
+  }
+  .page-post-detail .post-title {
+    font-weight: 600;
+    font-size: 20px !important;
+  }
+  .my_post_copyright {
+/* 版权所有 */
+    width: 95%;
+    font-size: 0.73rem;
+    margin: 2em auto 0;
+  }
+  .my_post_copyright p {
+    font-size: 12px;
+    margin: 3px;
+    line-height: 1.2em;
+    padding-bottom: 0.5em;
+  }
+}
+/*适应手机屏幕设置*/
+@media (max-width: 767px) {
+  .header-inner {
+    margin-bottom: 10px !important;
+    background: none;
+  }
+  .posts-expand .post-body h1 {
+    padding-top: 20px;
+  }
+  .posts-expand .post-body h2,
+  .posts-expand .post-body h3 {
+    pointer-events: none;
+  }
+  .posts-expand .post-body h1,
+  .posts-expand .post-body h2,
+  .posts-expand .post-body h3,
+  .posts-expand .post-body h4 {
+    pointer-events: auto;
+    color: #2c3e50;
+  }
+  .posts-expand .post-body h1:before,
+  .posts-expand .post-body h2:before,
+  .posts-expand .post-body h3:before,
+  .posts-expand .post-body h4:before,
+  .posts-expand .post-body h5:before,
+  .posts-expand .post-body h6:before {
+    display: none;
+  }
+  .posts-expand .post-body h2 {
+    padding-bottom: 0.7em;
+    border-bottom: 1px solid #ddd;
+  }
+  .posts-expand .post-body h3 {
+    line-height: 1.2;
+    position: relative;
+  }
+}
+/*手机端显示设置信息*/
+@media (max-width: 767px) {
+  .highlight figcaption {
+    font-size: 12px;
+  }
+  .highlight .gutter pre {
+    padding-left: 2px;
+  }
+  .highlight,
+  pre {
+    font-size: 10px;
+  }
+  .code span {
+    font-size: 12px;
+  }
+  div#comments.comments.v {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .comments {
+    margin: 20px 10px 0;
+  }
+}
+/*手机适配文章底部信息*/
+@media (max-width: 767px) {
+  .main {
+    padding-bottom: 130px;
+  }
+  .footer {
+    font-size: 12px;
+  }
+  .read-over {
+/*本文阅读结束*/
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(234,16,61,0.569);
+    font-size: 12px;
+  }
+  .share_reward {
+/*打赏*/
+    font-size: 12px;
+    padding: 10px 0;
+    margin: 5px auto;
+    width: 90%;
+    text-align: center;
+  }
+  #rewardButton {
+    margin: 15px auto;
+  }
+  #rewardButton span {
+/*打赏*/
+    display: inline-block;
+    width: 50px;
+    height: 35px;
+  }
+  #QR {
+    padding-top: 5px;
+  }
+  #QR a {
+    border: 0;
+  }
+  #QR img {
+    width: 60px;
+    display: inline-block;
+    margin: 0.8em 2em 0 2em;
+  }
+  .post-copyright {
+    padding: 0.1em 0.5em;
+    margin: 0em 0 0;
+    border-left: 2px solid #ff1700;
+  }
+  .post-copyright li {
+    font-size: 13.5px;
+  }
+  .posts-expand .post-tags {
+    margin-top: 10px;
+    font-size: 8px;
+  }
+  .post-nav-item a {
+    font-size: 12px;
+    line-height: unset;
+  }
+  .pagination {
+/*分页按钮*/
+    margin: 30px;
+    text-align: center;
+    border-top: 0px;
+  }
+  #top p {
+    font-size: 12px;
+    display: block;
+  }
+  .post-body .note {
+    margin: 10px auto;
+    font-size: 14px;
+  }
+  .post-body .note.info p {
+    font-size: 13px;
+  }
+  .post-body .tabs .tab-content .note {
+    margin: 10px auto;
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .post {
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  .card {
+    width: 88%;
+    padding: 3px 20px;
+    margin-bottom: 0rem;
+  }
+  #links {
+    margin-top: 3rem;
+  }
+  .local-search-popup {
+    top: 10%;
+    margin: 10px 35px;
+    width: 80%;
+    height: 60%;
+  }
+  .local-search-popup .search-icon,
+  .local-search-popup .popup-btn-close {
+    color: rgba(21,161,216,0.949);
+  }
+  .local-search-popup .local-search-input-wrapper input {
+    padding-left: 10px;
+    height: 21px;
+    background-color: #fff;
+  }
+  .local-search-popup .popup-btn-close {
+    border-left: none;
+  }
+  .local-search-popup p.search-result {
+    padding-bottom: 1.2em;
+    font-size: 13px;
+    margin: 0.1em 0 0.5em;
+  }
+  .local-search-popup a.search-result-title {
+    font-size: 14px;
+  }
+}
+/* 适配手机样式 end  ------------------------> */
