@@ -237,7 +237,6 @@ function setSidebarMarginTop (headerOffset) {
 
           <div class="content post posts-expand">
             
-
     
   
   
@@ -461,6 +460,19 @@ function setSidebarMarginTop (headerOffset) {
   
 
 
+  <div
+  data-weibo-title="分享到微博"
+  data-qq-title="分享到QQ"
+  data-douban-title="分享到豆瓣"
+  class="social-share"
+  class="share-component"
+
+
+
+  data-disabled="qzone,google+,linkedin"
+  data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣...">
+   分享到：
+</div>
 
           </div>
           
@@ -792,10 +804,9 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     document.body.addEventListener('input', POWERMODE);
   </script>
 
-
-
-
-
+<!--share.js-->
+<link rel="stylesheet" href="/dist/css/share.min.css">
+<script src="/dist/js/social-share.min.js"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
 
