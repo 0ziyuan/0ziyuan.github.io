@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0e941a;
+  background: #1d8ae7;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2596,6 +2596,23 @@ pre {
 code,
 pre {
   border: 1px solid #d6d6d6;
+}
+.main {
+  padding-bottom: 150px;
+}
+.headband {
+  height: 1px;
+  background: #eee;
+}
+@media (max-width: 767px) {
+  .headband {
+    height: 0px;
+  }
+}
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
 /* 适配手机样式 began ------------------------> */
 @media (max-width: 767px) {
