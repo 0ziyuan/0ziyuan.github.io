@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #eb8285;
+  background: #d0ddff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2597,28 +2597,8 @@ code,
 pre {
   border: 1px solid #d6d6d6;
 }
-.main {
-  padding-bottom: 150px;
-}
-.headband {
-  height: 1px;
-  background: #eee;
-}
-@media (max-width: 767px) {
-  .headband {
-    height: 0px;
-  }
-}
 /* 适配手机样式 began ------------------------> */
 @media (max-width: 767px) {
-  body {
-    background-image: url("https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201101222343.jpg");
-    background-size: 100%;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #34495e;
-  }
   .menu {
     display: flex;
     margin-left: 5px;
@@ -2744,43 +2724,6 @@ pre {
     margin: 3px;
     line-height: 1.2em;
     padding-bottom: 0.5em;
-  }
-}
-/*适应手机屏幕设置*/
-@media (max-width: 767px) {
-  .header-inner {
-    margin-bottom: 10px !important;
-    background: none;
-  }
-  .posts-expand .post-body h1 {
-    padding-top: 20px;
-  }
-  .posts-expand .post-body h2,
-  .posts-expand .post-body h3 {
-    pointer-events: none;
-  }
-  .posts-expand .post-body h1,
-  .posts-expand .post-body h2,
-  .posts-expand .post-body h3,
-  .posts-expand .post-body h4 {
-    pointer-events: auto;
-    color: #2c3e50;
-  }
-  .posts-expand .post-body h1:before,
-  .posts-expand .post-body h2:before,
-  .posts-expand .post-body h3:before,
-  .posts-expand .post-body h4:before,
-  .posts-expand .post-body h5:before,
-  .posts-expand .post-body h6:before {
-    display: none;
-  }
-  .posts-expand .post-body h2 {
-    padding-bottom: 0.7em;
-    border-bottom: 1px solid #ddd;
-  }
-  .posts-expand .post-body h3 {
-    line-height: 1.2;
-    position: relative;
   }
 }
 /*手机端显示设置信息*/
