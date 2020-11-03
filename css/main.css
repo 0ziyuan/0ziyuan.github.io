@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #03b303;
+  background: #d24994;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2601,6 +2601,7 @@ pre {
 @media (max-width: 767px) {
   body {
     background-image: url("https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201101222343.jpg");
+    background-size: cover;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -2868,14 +2869,6 @@ pre {
   .post {
     margin-bottom: 20px;
     padding: 10px;
-  }
-  .card {
-    width: 88%;
-    padding: 3px 20px;
-    margin-left: 3rem;
-  }
-  #links {
-    margin-top: 20px;
   }
   .local-search-popup {
     top: 10%;
