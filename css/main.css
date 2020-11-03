@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #17ffff;
+  background: #a2a8ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2869,6 +2869,14 @@ pre {
   .post {
     margin-bottom: 20px;
     padding: 10px;
+  }
+  .card {
+    width: 60%;
+    padding: 3px 20px;
+    margin-bottom: 0rem;
+  }
+  #links {
+    margin-top: 3rem;
   }
   .local-search-popup {
     top: 10%;
