@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f0e812;
+  background: #7da2ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2569,9 +2569,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
-}
-.post-body {
-  border-radius: 15px;
 }
 #透明度设置,
 .content-wrap {
