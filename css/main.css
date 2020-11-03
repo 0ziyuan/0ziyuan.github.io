@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #c20611;
+  background: #e065fa;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2606,15 +2606,6 @@ pre {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #34495e;
-  }
-  .menu {
-    display: flex;
-    margin-left: 5px;
-    float: none !important;
-  }
-  .menu-item-active a:after {
-    top: -10%;
-    right: 24px;
   }
   blockquote p {
     font-size: 13px;
