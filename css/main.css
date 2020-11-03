@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #50deb9;
+  background: #eb8285;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2798,78 +2798,8 @@ pre {
   .code span {
     font-size: 12px;
   }
-  div#comments.comments.v {
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-  }
   .comments {
     margin: 20px 10px 0;
-  }
-}
-/*手机适配文章底部信息*/
-@media (max-width: 767px) {
-  .main {
-    padding-bottom: 130px;
-  }
-  .footer {
-    font-size: 12px;
-  }
-  .read-over {
-/*本文阅读结束*/
-    text-align: center;
-    margin-top: 20px;
-    color: rgba(234,16,61,0.569);
-    font-size: 12px;
-  }
-  .share_reward {
-/*打赏*/
-    font-size: 12px;
-    padding: 10px 0;
-    margin: 5px auto;
-    width: 90%;
-    text-align: center;
-  }
-  #rewardButton {
-    margin: 15px auto;
-  }
-  #rewardButton span {
-/*打赏*/
-    display: inline-block;
-    width: 50px;
-    height: 35px;
-  }
-  #QR {
-    padding-top: 5px;
-  }
-  #QR a {
-    border: 0;
-  }
-  #QR img {
-    width: 60px;
-    display: inline-block;
-    margin: 0.8em 2em 0 2em;
-  }
-  .post-copyright {
-    padding: 0.1em 0.5em;
-    margin: 0em 0 0;
-    border-left: 2px solid #ff1700;
-  }
-  .post-copyright li {
-    font-size: 13.5px;
-  }
-  .posts-expand .post-tags {
-    margin-top: 10px;
-    font-size: 8px;
-  }
-  .post-nav-item a {
-    font-size: 12px;
-    line-height: unset;
-  }
-  .pagination {
-/*分页按钮*/
-    margin: 30px;
-    text-align: center;
-    border-top: 0px;
   }
 }
 @media (max-width: 767px) {
@@ -2882,7 +2812,7 @@ pre {
     padding: 3px 20px;
     margin-bottom: 0rem;
   }
-  #links {
+  links {
     margin-top: 3rem;
   }
   .local-search-popup {
