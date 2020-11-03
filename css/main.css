@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4b7590;
+  background: #18ff94;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2633,8 +2633,8 @@ pre {
   .menu .menu-item a {
 /*font-weight: 600;*/
     color: #2c3e50;
-    font-size: 5px;
-    padding: 5px 12px;
+    font-size: 14px;
+    padding: 5px 5px;
   }
   .menu-item-active a:after {
     top: -10%;
