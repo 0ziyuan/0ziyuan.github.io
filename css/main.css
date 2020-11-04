@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #cbffff;
+  background: #37d036;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2599,7 +2599,7 @@ body {
   resize: none;
 }
 code {
-  color: #ff7600;
+  color: #87cefa;
   background: #fbf7f8;
   margin: 2px;
 }
@@ -2787,29 +2787,6 @@ pre {
   .posts-expand .post-body h3 {
     line-height: 1.2;
     position: relative;
-  }
-}
-/*手机端显示设置信息*/
-@media (max-width: 767px) {
-  .highlight figcaption {
-    font-size: 12px;
-  }
-  .highlight .gutter pre {
-    padding-left: 2px;
-  }
-  .highlight,
-  pre {
-    font-size: 10px;
-  }
-  .code span {
-    font-size: 12px;
-  }
-  div#comments.comments.v {
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-  }
-  .comments {
-    margin: 20px 10px 0;
   }
 }
 /*手机适配文章底部信息*/
