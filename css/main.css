@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #37d036;
+  background: #2fff18;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2802,7 +2802,7 @@ pre {
     text-align: center;
     margin-top: 20px;
     color: rgba(234,16,61,0.569);
-    font-size: 12px;
+    font-size: 8px;
   }
   .share_reward {
 /*打赏*/
