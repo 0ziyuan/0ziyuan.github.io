@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://0-ziyuan.com/about/index.html</loc>
+    
+    <lastmod>2020-11-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://0-ziyuan.com/links/index.html</loc>
     
     <lastmod>2020-11-01</lastmod>
@@ -80,13 +87,6 @@
   
   <url>
     <loc>https://0-ziyuan.com/2020/10/06/hello-world/</loc>
-    
-    <lastmod>2020-10-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://0-ziyuan.com/about/index.html</loc>
     
     <lastmod>2020-10-24</lastmod>
     
@@ -181,14 +181,14 @@
   </url>
   
   <url>
-    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E6%8E%A8%E5%AF%BC%E4%B8%8E%E9%80%92%E5%BD%92/</loc>
+    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E5%9B%BE%E8%AE%BA/</loc>
     <lastmod>2020-11-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E9%80%BB%E8%BE%91%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2020-11-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E9%80%BB%E8%BE%91%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2020-11-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -223,7 +223,7 @@
   </url>
   
   <url>
-    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E5%9B%BE%E8%AE%BA/</loc>
+    <loc>https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E6%8E%A8%E5%AF%BC%E4%B8%8E%E9%80%92%E5%BD%92/</loc>
     <lastmod>2020-11-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
