@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>简单了解STL</title>
+      <link href="2021/01/19/C++%20STL/"/>
+      <url>2021/01/19/C++%20STL/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210119180059.jpg"></p><a id="more"></a><h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><p>STL 是“Standard Template Library”的缩写，中文译为“标准模板库”或者“泛型库”。STL 是 C++ 标准库的一部分，不用单独安装。</p><p>在实际的开发过程中，数据结构本身的重要性不会逊于操作于数据结构的算法的重要性，当程序中存在着对时间要求很高的部分时，数据结构的选择就显得更加重要。经典的数据结构数量有限，但是我们常常重复着一些为了实现向量、链表等结构而编写的代码，这些代码都十分相似，只是为了适应不同数据的变化而在细节上有所出入。</p><p>C++ 对模板（Template）支持得很好，STL 就是借助模板把常用的数据结构及其算法都实现了一遍，并且做到了数据结构和算法的分离。例如，vector 的底层为顺序表（数组），list 的底层为双向链表，deque 的底层为循环队列，set 的底层为红黑树，hash_set 的底层为哈希表。</p><h5 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h5><p> HP STL是C++ STL的第一个实现版本，而且开放源代码。其他版本的C++ STL，一般是以HP STL为蓝本实现出来的。不过，现在已经很少直接使用此版本的 STL 了。SGI STL 在 Linux 平台上的性能非常出色。PJ STL 被 Visual C++ 编译器所采用，但和 HP STL、SGI STL 不同的是，PJ STL 并不是开源。</p><h5 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a><strong>组成部分</strong></h5><p>STL可分为容器(containers)、迭代器(iterators)、空间配置器(allocator)、配接器(adapters)、算法(algorithms)、仿函数(functors)六个部分。</p><table><thead><tr><th>STL的组成</th><th align="center">含义</th></tr></thead><tbody><tr><td>容器</td><td align="center">一些封装<a href="http://c.biancheng.net/data_structure/">数据结构</a>的模板类，例如 vector 向量容器、list 列表容器等。</td></tr><tr><td>算法</td><td align="center">STL 提供了非常多（大约 100 个）的数据结构算法，它们都被设计成一个个的模板函数，这些算法在 std 命名空间中定义，其中大部分算法都包含在头文件 <algorithm> 中，少部分位于头文件 <numeric> 中。</td></tr><tr><td>迭代器</td><td align="center">在 <a href="http://c.biancheng.net/cplus/">C++</a> STL 中，对容器中数据的读和写，是通过迭代器完成的，扮演着容器和算法之间的胶合剂。</td></tr><tr><td>函数对象</td><td align="center">如果一个类将 () 运算符重载为成员函数，这个类就称为函数对象类，这个类的对象就是函数对象（又称仿函数）。</td></tr><tr><td>适配器</td><td align="center">可以使一个类的接口（模板的参数）适配成用户指定的形式，从而让原本不能在一起工作的两个类工作在一起。值得一提的是，容器、迭代器和函数都有适配器。</td></tr><tr><td>内存分配器</td><td align="center">为容器类模板提供自定义的内存申请和释放功能，由于往往只有高级用户才有改变内存分配策略的需求，因此内存分配器对于一般用户来说，并不常用。</td></tr></tbody></table><p>在C++标准中，STL被组织为下面的13个头文件：<a href="https://baike.baidu.com/item/algorithm">algorithm</a>、<a href="https://baike.baidu.com/item/deque">deque</a>、<a href="https://baike.baidu.com/item/functional">functional</a>、<a href="https://baike.baidu.com/item/iterator">iterator</a>、<a href="https://baike.baidu.com/item/vector">vector</a>、<a href="https://baike.baidu.com/item/list">list</a>、<a href="https://baike.baidu.com/item/map/5808503">map</a>、memory、<a href="https://baike.baidu.com/item/numeric">numeric</a>、<a href="https://baike.baidu.com/item/queue">queue</a>、<a href="https://baike.baidu.com/item/set">set</a>、<a href="https://baike.baidu.com/item/stack">stack</a>和<a href="https://baike.baidu.com/item/utility">utility</a>。</p><h5 id="一些常用头文件"><a href="#一些常用头文件" class="headerlink" title="一些常用头文件"></a>一些常用头文件</h5><h6 id="include"><a href="#include" class="headerlink" title="#include "></a>#include <vector></h6><p>vector是变长数组，支持随机访问，不支持在任意位置O(1)插入。为了保证效率，元素的增删一般应该在末尾进行。</p><p>​    声明</p><p>​       #include <vector>    头文件</p><p>​       vector<int> a;       相当于一个长度动态变化的int数组</p><p>​       vector<int> b[233];  相当于第一维长233，第二位长度动态变化的int数组</p><p>​       struct rec{…};</p><p>​       vector<rec> c;       自定义的结构体类型也可以保存在vector中</p><p>​    size/empty</p><p>size函数返回vector的实际长度（包含的元素个数），empty函数返回一个bool类型，表明vector是否为空。二者的时间复杂度都是O(1)。</p><p>所有的STL容器都支持这两个方法，含义也相同，之后我们就不再重复给出。</p><p>​    clear</p><p>​       clear函数把vector清空。</p><p>​    迭代器</p><p>​       迭代器就像STL容器的“指针”，可以用星号“*”操作符解除引用。</p><p>​       一个保存int的vector的迭代器声明方法为：</p><p>​       vector<int>::iterator it;</p><p>vector的迭代器是“随机访问迭代器”，可以把vector的迭代器与一个整数相加减，其行为和指针的移动类似。可以把vector的两个迭代器相减，其结果也和指针相减类似，得到两个迭代器对应下标之间的距离。</p><p>​    begin/end</p><p>begin函数返回指向vector中第一个元素的迭代器。例如a是一个非空的vector，则*a.begin()与a[0]的作用相同。</p><p>所有的容器都可以视作一个“前闭后开”的结构，end函数返回vector的尾部，即第n个元素再往后的“边界”。*a.end()与a[n]都是越界访问，其中n=a.size()。</p><p>下面两份代码都遍历了vector<int>a，并输出它的所有元素。</p><p>for (int I = 0; I &lt; a.size(); I ++) cout &lt;&lt; a[i] &lt;&lt; endl;</p><p>for (vector<int>::iterator it = a.begin(); it != a.end(); it ++) cout &lt;&lt; *it &lt;&lt; endl;</p><p>​    front/back</p><p>​       front函数返回vector的第一个元素，等价于*a.begin() 和 a[0]。</p><p>​       back函数返回vector的最后一个元素，等价于*==a.end() 和 a[a.size() – 1]。</p><p>​    push_back() 和 pop_back()</p><p>a.push_back(x) 把元素x插入到vector a的尾部。</p><p>​       b.pop_back() 删除vector a的最后一个元素。</p><h6 id="include-1"><a href="#include-1" class="headerlink" title="#include "></a>#include <queue></h6><p>头文件queue主要包括循环队列queue和优先队列priority_queue两个容器。</p><p>​    </p><p>​    声明</p><p>​       queue<int> q;</p><p>​       struct rec{…}; queue<rec> q;    //结构体rec中必须定义小于号</p><p>​       priority_queue<int> q;    // 大根堆</p><p>​      priority_queue&lt;int, vector<int>, greater<int> q;  // 小根堆</p><p>​       priority_queue&lt;pair&lt;int, int&gt;&gt;q;</p><p>​    循环队列 queue</p><p>​       push 从队尾插入</p><p>​       pop 从队头弹出</p><p>​       front 返回队头元素</p><p>​       back 返回队尾元素</p><p>​    优先队列 priority_queue</p><p>​       push 把元素插入堆</p><p>​       pop 删除堆顶元素</p><p>​       top 查询堆顶元素（最大值）</p><h6 id="include-2"><a href="#include-2" class="headerlink" title="#include "></a>#include <stack></h6><p>头文件stack包含栈。声明和前面的容器类似。</p><p>push 向栈顶插入</p><p>pop 弹出栈顶元素</p><h6 id="include-3"><a href="#include-3" class="headerlink" title="#include "></a>#include <deque></h6><p>双端队列deque是一个支持在两端高效插入或删除元素的连续线性存储空间。它就像是vector和queue的结合。与vector相比，deque在头部增删元素仅需要O(1)的时间；与queue相比，deque像数组一样支持随机访问。</p><p>[] 随机访问</p><p>begin/end，返回deque的头/尾迭代器</p><p>front/back 队头/队尾元素</p><p>push_back 从队尾入队</p><p>push_front 从队头入队</p><p>pop_back 从队尾出队</p><p>pop_front 从队头出队</p><p>clear 清空队列</p><h6 id="include-4"><a href="#include-4" class="headerlink" title="#include "></a>#include <set></h6><p>头文件set主要包括set和multiset两个容器，分别是“有序集合”和“有序多重集合”，即前者的元素不能重复，而后者可以包含若干个相等的元素。set和multiset的内部实现是一棵红黑树，它们支持的函数基本相同。</p><p>声明</p><p>​    set<int> s;</p><p>struct rec{…}; set<rec> s;   // 结构体rec中必须定义小于号</p><p>multiset<double> s;</p><p>size/empty/clear</p><p>​    与vector类似</p><p>迭代器</p><p>set和multiset的迭代器称为“双向访问迭代器”，不支持“随机访问”，支持星号(*)解除引用，仅支持”++”和–“两个与算术相关的操作。</p><p>设it是一个迭代器，例如set<int>::iterator it;</p><p>若把it++，则it会指向“下一个”元素。这里的“下一个”元素是指在元素从小到大排序的结果中，排在it下一名的元素。同理，若把it–，则it将会指向排在“上一个”的元素。</p><p>​    begin/end</p><p>​       返回集合的首、尾迭代器，时间复杂度均为O(1)。</p><p>​       s.begin() 是指向集合中最小元素的迭代器。</p><p>s.end() 是指向集合中最大元素的下一个位置的迭代器。换言之，就像vector一样，是一个“前闭后开”的形式。因此–s.end()是指向集合中最大元素的迭代器。</p><p>​    insert</p><p>​       s.insert(x)把一个元素x插入到集合s中，时间复杂度为O(logn)。</p><p>​       在set中，若元素已存在，则不会重复插入该元素，对集合的状态无影响。</p><p>​    find</p><p>s.find(x) 在集合s中查找等于x的元素，并返回指向该元素的迭代器。若不存在，则返回s.end()。时间复杂度为O(logn)。</p><p>​    lower_bound/upper_bound</p><p>​       这两个函数的用法与find类似，但查找的条件略有不同，时间复杂度为 O(logn)。</p><p>s.lower_bound(x) 查找大于等于x的元素中最小的一个，并返回指向该元素的迭代器。</p><p>s.upper_bound(x) 查找大于x的元素中最小的一个，并返回指向该元素的迭代器。</p><p>​    erase</p><p>设it是一个迭代器，s.erase(it) 从s中删除迭代器it指向的元素，时间复杂度为O(logn)</p><p>设x是一个元素，s.erase(x) 从s中删除所有等于x的元素，时间复杂度为O(k+logn)，其中k是被删除的元素个数。</p><p>​    count</p><p>​       s.count(x) 返回集合s中等于x的元素个数，时间复杂度为 O(k +logn)，其中k为元素x的个数。</p><h6 id="include-5"><a href="#include-5" class="headerlink" title="#include "></a>#include <map></h6><p>map容器是一个键值对key-value的映射，其内部实现是一棵以key为关键码的红黑树。Map的key和value可以是任意类型，其中key必须定义小于号运算符。</p><p>​    声明</p><p>​       map&lt;key_type, value_type&gt; name;</p><p>​       例如：</p><p>​       map&lt;long, long, bool&gt; vis;</p><p>​       map&lt;string, int&gt; hash;</p><p>​       map&lt;pair&lt;int, int&gt;, vector<int>&gt; test;</p><p>​    size/empty/clear/begin/end均与set类似。</p><p>​    Insert/erase</p><p>​       与set类似，但其参数均是pair&lt;key_type, value_type&gt;。</p><p>​    find</p><p>​       h.find(x) 在变量名为h的map中查找key为x的二元组。</p><p>​    []操作符</p><p>​       h[key] 返回key映射的value的引用，时间复杂度为O(logn)。</p><p>[]操作符是map最吸引人的地方。我们可以很方便地通过h[key]来得到key对应的value，还可以对h[key]进行赋值操作，改变key对应的value。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+          <category> STL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>矩阵连乘</title>
       <link href="2020/12/13/%E7%9F%A9%E9%98%B5%E8%BF%9E%E4%B9%98/"/>
       <url>2020/12/13/%E7%9F%A9%E9%98%B5%E8%BF%9E%E4%B9%98/</url>
@@ -240,9 +267,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -269,9 +296,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -298,9 +325,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -327,9 +354,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -356,9 +383,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -385,9 +412,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
