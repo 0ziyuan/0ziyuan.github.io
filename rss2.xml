@@ -9,8 +9,60 @@
     <atom:link href="https://0-ziyuan.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Don&#39;t try to understand it, feel it.</description>
-    <pubDate>Fri, 22 Jan 2021 05:22:08 GMT</pubDate>
+    <pubDate>Tue, 09 Feb 2021 12:47:50 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>切片</title>
+      <link>https://0-ziyuan.com/2021/02/09/%E5%88%87%E7%89%87/</link>
+      <guid>https://0-ziyuan.com/2021/02/09/%E5%88%87%E7%89%87/</guid>
+      <pubDate>Tue, 09 Feb 2021 12:15:01 GMT</pubDate>
+      
+      <description>&lt;p&gt;&lt;img src=&quot;https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210209203632.jpeg&quot;&gt;&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210209203632.jpeg"></p><a id="more"></a><h6 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h6><p>Python中将处理列表的部分元素称之为切片。要创建切片，可指定要使用的第一个元素的索引和最后一个元素的索引加1，比如，要输出列表中的前三个元素，需要指定索引0-3，分别输出0、1、2的元素。</p><p>例如:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">players =[<span class="string">&#x27;charles&#x27;</span>,<span class="string">&#x27;martina&#x27;</span>,<span class="string">&#x27;michael&#x27;</span>,<span class="string">&#x27;florence&#x27;</span>,<span class="string">&#x27;eli&#x27;</span>]</span><br><span class="line">print(players[<span class="number">0</span>:<span class="number">3</span>])</span><br></pre></td></tr></table></figure><p>代码打印该列表的一个切片，其中包含三名队员。</p><p>也可以生成列表的任何子集，例如提取列表的2-4个元素，可将起始索引的值指定为1，将终止索引指定为4</p><p>例如：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">players =[<span class="string">&#x27;charles&#x27;</span>,<span class="string">&#x27;martina&#x27;</span>,<span class="string">&#x27;michael&#x27;</span>,<span class="string">&#x27;florence&#x27;</span>,<span class="string">&#x27;eli&#x27;</span>]</span><br><span class="line">print(players[<span class="number">1</span>:<span class="number">4</span>])</span><br></pre></td></tr></table></figure><p>如果没有指定起始索引，Python将自动从列表头开始</p><p>例如：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">players =[<span class="string">&#x27;charles&#x27;</span>,<span class="string">&#x27;martina&#x27;</span>,<span class="string">&#x27;michael&#x27;</span>,<span class="string">&#x27;florence&#x27;</span>,<span class="string">&#x27;eli&#x27;</span>]</span><br><span class="line">print(players[:<span class="number">4</span>])</span><br></pre></td></tr></table></figure><p>要让切片终止于列表的末尾，可以使用类似的语法。例如，提取从第三个元素到列表末尾的所有元素，可将起始索引设置为2，省略终止索引</p><p>例如：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">players =[<span class="string">&#x27;charles&#x27;</span>,<span class="string">&#x27;martina&#x27;</span>,<span class="string">&#x27;michael&#x27;</span>,<span class="string">&#x27;florence&#x27;</span>,<span class="string">&#x27;eli&#x27;</span>]</span><br><span class="line">print(players[<span class="number">2</span>:])</span><br></pre></td></tr></table></figure><p>无论列表有多长，切片都可以让你输出从指定位置到列表末尾的所有记录，其中，负数索引表示返回离列表末尾相应距离的元素，例如，输出列表最后三个元素</p><p>例如：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">players =[<span class="string">&#x27;charles&#x27;</span>,<span class="string">&#x27;martina&#x27;</span>,<span class="string">&#x27;michael&#x27;</span>,<span class="string">&#x27;florence&#x27;</span>,<span class="string">&#x27;eli&#x27;</span>]</span><br><span class="line">print(players[<span class="number">-3</span>:])</span><br></pre></td></tr></table></figure><h6 id="遍历切片"><a href="#遍历切片" class="headerlink" title="遍历切片"></a><strong>遍历切片</strong></h6><p>可在for循环中使用切片达到遍历切片的效果</p><p>例如，遍历列表前三名的队员：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">players =[<span class="string">&#x27;charles&#x27;</span>,<span class="string">&#x27;martina&#x27;</span>,<span class="string">&#x27;michael&#x27;</span>,<span class="string">&#x27;florence&#x27;</span>,<span class="string">&#x27;eli&#x27;</span>]</span><br><span class="line">print(“here are the first three players on my team:”)</span><br><span class="line"><span class="keyword">for</span> player <span class="keyword">in</span> players[:<span class="number">3</span>]</span><br><span class="line">    print(player.title())</span><br></pre></td></tr></table></figure><p>在很多情况下，切片很有用。例如，在编写游戏时，可以在玩家退出游戏时将其最终得分加入到一个列表中，然后获取该玩家的三个最高分；在编写web应用程序的时候可以用来分页显示信息。</p><h6 id="复制列表"><a href="#复制列表" class="headerlink" title="复制列表"></a><strong>复制列表</strong></h6><p>要复制列表，可创建一个包含整个列表的切片，方法是同时省略起始索引和终止索引（[：]）；让Python创建一个始于第一个元素，终于最后一个元素的切片，即复制整个列表。</p><p>例如：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">players =[<span class="string">&#x27;charles&#x27;</span>,<span class="string">&#x27;martina&#x27;</span>,<span class="string">&#x27;michael&#x27;</span>,<span class="string">&#x27;florence&#x27;</span>,<span class="string">&#x27;eli&#x27;</span>]</span><br><span class="line">player = players</span><br><span class="line">print(player)</span><br></pre></td></tr></table></figure><p>注意：这种方法复制出的是两个列表，可分别向两个列表中插入不同的数据。</p>]]></content:encoded>
+      
+      
+      <category domain="https://0-ziyuan.com/categories/Python/">Python</category>
+      
+      <category domain="https://0-ziyuan.com/categories/Python/%E8%BF%90%E7%AE%97%E7%AC%A6/">运算符</category>
+      
+      
+      <category domain="https://0-ziyuan.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</category>
+      
+      
+      <comments>https://0-ziyuan.com/2021/02/09/%E5%88%87%E7%89%87/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>lowbit函数原理</title>
+      <link>https://0-ziyuan.com/2021/01/24/lowbit%E5%87%BD%E6%95%B0%E5%8E%9F%E7%90%86/</link>
+      <guid>https://0-ziyuan.com/2021/01/24/lowbit%E5%87%BD%E6%95%B0%E5%8E%9F%E7%90%86/</guid>
+      <pubDate>Sun, 24 Jan 2021 13:24:36 GMT</pubDate>
+      
+      <description>&lt;p&gt;&lt;img src=&quot;https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210209203510.jpg&quot;&gt;&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210209203510.jpg"></p><a id="more"></a><p>lowbit()函数所求的是最低位1的位置</p><p>也可以通过位运算来计算 ：</p><p>int Lowbit(x) {</p><p> return x&amp;(-x);</p><p>}</p><p>例如：</p><p><strong>1&gt; x = 1:</strong></p><p>十进制转二进制（设位数为８）：</p><p>1 =&gt; 0000 0001</p><p>-1=&gt; 1111 1111**(此处为1的补码)**</p><p>1&amp;(-1)的二进制位运算为(同1异0)：</p><p><img src="https://img.136.la/20200625/14bbe16e353c44999e1d564af2e23ee0.jpg"></p><p>所以1&amp;(-1)=1</p><p><strong>2&gt; x = 6:</strong></p><p>十进制转二进制（设位数为８）：</p><p>6 =&gt; 0000 0110</p><p>-6=&gt; 1111 1010**(此处为6的补码)**</p><p>6&amp;(-6)的二进制位运算为(同1异0)：</p><p><img src="https://img.136.la/20200625/e64ed9642b6c47679ea75cc5bad8f177.jpg"></p><p>所以6&amp;(-6)=2</p><p><strong>总结：</strong></p><p>求出2^p(其中p: x 的二进制表示数中， 右向左数第一个1的位置)，</p><p>如6的二进制表示为110，向左数第零个为0，第一个为1，则p=1，</p><p>故Lowbit(6) = 2^1 = 2。</p><p><strong>或直接理解为：二进制按位与运算，返回不大于x的2的最大次方因子</strong></p>]]></content:encoded>
+      
+      
+      <category domain="https://0-ziyuan.com/categories/C/">C++</category>
+      
+      <category domain="https://0-ziyuan.com/categories/C/%E9%97%AE%E9%A2%98/">问题</category>
+      
+      
+      <category domain="https://0-ziyuan.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</category>
+      
+      <category domain="https://0-ziyuan.com/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">位运算</category>
+      
+      
+      <comments>https://0-ziyuan.com/2021/01/24/lowbit%E5%87%BD%E6%95%B0%E5%8E%9F%E7%90%86/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>简单了解STL</title>
@@ -211,58 +263,6 @@
       
       
       <comments>https://0-ziyuan.com/2020/10/24/%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>约瑟夫生死游戏</title>
-      <link>https://0-ziyuan.com/2020/10/22/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%94%9F%E6%AD%BB%E6%B8%B8%E6%88%8F/</link>
-      <guid>https://0-ziyuan.com/2020/10/22/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%94%9F%E6%AD%BB%E6%B8%B8%E6%88%8F/</guid>
-      <pubDate>Thu, 22 Oct 2020 08:52:35 GMT</pubDate>
-      
-      <description>&lt;p&gt;&lt;img src=&quot;https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201025123125.jpg&quot;&gt;&lt;/p&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201025123125.jpg"></p><a id="more"></a><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h5><p>用循环链表实现：N个乘客同乘一艘船，因为严重超载，加上风高浪大，危险万分，因此船长告诉乘客，只有将部分乘客投入海中，其余人才能幸免于难。 无奈，大家只得同意这种办法。于是N个人围成一圈(从1，2，3…N分别编号)。由编号为1的人开始，依次报数，数到第M人，便把他投入大海中， 然后再从他的下一个人数起，数到第M人，再将他扔到大海中，如此循环地进行，直到剩下K个乘客为止。按顺序依次输出被扔下大海的乘客的编号。</p><p>提交格式： 实现int * solve(int N,int M,int K)函数。 函数参数为乘客人数N、间隔人数M和剩余乘客人数K，1&lt;=N&lt;=1000，1&lt;=M&lt;=500000，0&lt;=K&lt;N。 函数返回值为按顺序被扔下大海乘客编号的数组。 请不要printf输出任何内容。</p><h5 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a><strong>核心思路</strong></h5><ol><li><p>创建并初始化循环链表；</p></li><li><p>按照间隔人数M删除节点，同时记录被扔下大海乘客编号；</p></li><li><p>返回按顺序被扔下大海乘客编号的数组地址。</p></li></ol><h5 id="实现要点"><a href="#实现要点" class="headerlink" title="实现要点"></a><strong>实现要点</strong></h5><ol><li><p>头节点不存储编号，循环时注意绕开；</p></li><li><p>动态内存分配后，应立即判断是否分配成功；</p></li><li><p>删除i==M处节点时，需从i==M-1处节点对下一个节点进行判断，从而绕开头节点。这使得当M==1时，需从i==0处节点进行判断,不在i的循环范围1~M之中。故M==1的情况须单独处理。</p></li></ol><h5 id="测试样例"><a href="#测试样例" class="headerlink" title="测试样例"></a><strong>测试样例</strong></h5><p>输入样例1： 9  3  2 输出样例1： 3 6 9 4 8 5 2</p><p>输入样例2： 12 5 6 输出样例2： 5 10 3 9 4 12</p><p>输入样例3：  7  1 3 输出样例3： 5  6  7</p><h5 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a><strong>源代码</strong></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">int</span> d;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125; node;</span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">solve</span><span class="params">(<span class="keyword">int</span> N, <span class="keyword">int</span> M, <span class="keyword">int</span> K)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span>* a,<span class="keyword">int</span> n,<span class="keyword">int</span> k)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n, k, m;</span><br><span class="line"><span class="keyword">int</span>* data;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;请输入人数n，间隔人数m,剩余人数k:\n&quot;</span>);</span><br><span class="line">scanf_s(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;k);</span><br><span class="line">data = solve(n, m, k);</span><br><span class="line">print(data,n,k);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">solve</span><span class="params">(<span class="keyword">int</span> N, <span class="keyword">int</span> M, <span class="keyword">int</span> K)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">node* Header = (node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(node));</span><br><span class="line">    <span class="keyword">if</span> (!Header)<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">node* p, *q;</span><br><span class="line">Header-&gt;next = Header;</span><br><span class="line">p = Header;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">&#123;</span><br><span class="line">q = (node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(node));</span><br><span class="line"><span class="keyword">if</span> (!q)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line">q-&gt;d = i;</span><br><span class="line">q-&gt;next = p-&gt;next;</span><br><span class="line">p-&gt;next = q;</span><br><span class="line">p = q;</span><br><span class="line">&#125;</span><br><span class="line">p = Header-&gt;next;</span><br><span class="line"><span class="keyword">int</span> z = N - K;</span><br><span class="line"><span class="keyword">int</span>* a = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(z*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line"><span class="keyword">if</span> (!a)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>, j = N,s=<span class="number">0</span>;<span class="comment">//i控制每M个人删除;j存储剩余人数 </span></span><br><span class="line"><span class="keyword">if</span> (M == <span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; z; i++)</span><br><span class="line">&#123;</span><br><span class="line">a[s++] = i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">while</span> (j &gt; K)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (i == M - <span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (p-&gt;next != Header)<span class="comment">//不是删除第一个结点 </span></span><br><span class="line">&#123;</span><br><span class="line">q = p-&gt;next;</span><br><span class="line">p-&gt;next = q-&gt;next;</span><br><span class="line">a[s++] = q-&gt;d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span><span class="comment">//删除第一个结点 </span></span><br><span class="line">&#123;</span><br><span class="line">q = Header-&gt;next;</span><br><span class="line">Header-&gt;next = q-&gt;next;</span><br><span class="line">a[s++] = q-&gt;d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">free</span>(q);</span><br><span class="line"><span class="keyword">if</span> (p-&gt;next != Header)</span><br><span class="line">&#123;</span><br><span class="line">p = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">p = Header-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line">--j;</span><br><span class="line">i = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (p-&gt;next == Header)</span><br><span class="line">&#123;</span><br><span class="line">p = Header-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">p = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line">++i;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span>* a,<span class="keyword">int</span> n,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (n-k); i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d  &quot;</span>,a[i]);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://0-ziyuan.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</category>
-      
-      <category domain="https://0-ziyuan.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8/">链表</category>
-      
-      
-      <category domain="https://0-ziyuan.com/tags/%E7%BB%8F%E5%85%B8%E4%BE%8B%E9%A2%98/">经典例题</category>
-      
-      
-      <comments>https://0-ziyuan.com/2020/10/22/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%94%9F%E6%AD%BB%E6%B8%B8%E6%88%8F/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Set Theory</title>
-      <link>https://0-ziyuan.com/2020/10/12/Set-Theory/</link>
-      <guid>https://0-ziyuan.com/2020/10/12/Set-Theory/</guid>
-      <pubDate>Mon, 12 Oct 2020 15:48:03 GMT</pubDate>
-      
-      <description>&lt;p&gt;&lt;img src=&quot;https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201025123522.jpg&quot;&gt;&lt;/p&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201025123522.jpg"></p><a id="more"></a><p>集合论-基础知识-思维导图</p><p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201012235518.jpg"></p>]]></content:encoded>
-      
-      
-      <category domain="https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</category>
-      
-      <category domain="https://0-ziyuan.com/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E9%9B%86%E5%90%88%E8%AE%BA/">集合论</category>
-      
-      
-      <category domain="https://0-ziyuan.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">思维导图</category>
-      
-      <category domain="https://0-ziyuan.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</category>
-      
-      
-      <comments>https://0-ziyuan.com/2020/10/12/Set-Theory/#disqus_thread</comments>
       
     </item>
     
