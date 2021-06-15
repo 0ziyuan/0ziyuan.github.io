@@ -23,17 +23,21 @@
     var CONFIG = {"hostname":"0-ziyuan.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="Don&#39;t try to understand it, feel it.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="子渊学习笔记">
-<meta property="og:url" content="https://0-ziyuan.com/tags/%E8%BD%AC%E8%BD%BD/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Unix入门">
+<meta property="og:url" content="https://0-ziyuan.com/2021/03/20/Unix%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="子渊学习笔记">
-<meta property="og:description" content="Don&#39;t try to understand it, feel it.">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210615155055.jpg">
+<meta property="og:image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210615153728.png">
+<meta property="article:published_time" content="2021-03-20T13:41:02.000Z">
+<meta property="article:modified_time" content="2021-06-15T07:51:58.047Z">
 <meta property="article:author" content="林子渊">
+<meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210615155055.jpg">
 
-<link rel="canonical" href="https://0-ziyuan.com/tags/%E8%BD%AC%E8%BD%BD/">
+<link rel="canonical" href="https://0-ziyuan.com/2021/03/20/Unix%E5%85%A5%E9%97%A8/">
 
 
 <script id="page-configurations">
@@ -41,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: 转载 | 子渊学习笔记</title>
+  <title>Unix入门 | 子渊学习笔记</title>
   
 
 
@@ -231,57 +235,402 @@ function setSidebarMarginTop (headerOffset) {
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://0-ziyuan.com/2021/03/20/Unix%E5%85%A5%E9%97%A8/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011143426.jpg">
+      <meta itemprop="name" content="林子渊">
+      <meta itemprop="description" content="Don't try to understand it, feel it.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="子渊学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Unix入门
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-20 21:41:02" itemprop="dateCreated datePublished" datetime="2021-03-20T21:41:02+08:00">2021-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-15 15:51:58" itemprop="dateModified" datetime="2021-06-15T15:51:58+08:00">2021-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unix/" itemprop="url" rel="index"><span itemprop="name">Unix</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unix/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/03/20/Unix%E5%85%A5%E9%97%A8/" class="post-meta-item leancloud_visitors" data-flag-title="Unix入门" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/03/20/Unix%E5%85%A5%E9%97%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/20/Unix%E5%85%A5%E9%97%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">转载
-          <small>标签</small>
-        </h2>
-      </div>
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>819 字</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210615155055.jpg"></p>
+<a id="more"></a>
+
+<h2 id="登录与退出"><a href="#登录与退出" class="headerlink" title="登录与退出"></a>登录与退出</h2><h4 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h4><p>输入用户名、口令登录Unix系统。分为<strong>超级用户登录</strong>和<strong>普通用户登录</strong>。</p>
+<h4 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h4><p>在shell提示符下，键入exit命令或组合键ctrl-d。</p>
+<h2 id="常见命令格式"><a href="#常见命令格式" class="headerlink" title="常见命令格式"></a>常见命令格式</h2><p>Unix下命令格式基本如下：</p>
+<p> $&gt; 命令名 [-选项] [参数]</p>
+<h5 id="命令名"><a href="#命令名" class="headerlink" title="命令名"></a>命令名</h5><ul>
+<li>一个可执行程序</li>
+<li>脚本程序</li>
+<li>shell内置程序</li>
+</ul>
+<h5 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h5><ul>
+<li>短选项：-单个减号，后跟一个字符</li>
+<li>长选项：–两个减号，后跟一个单词</li>
+</ul>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ol>
+<li><p>显示系统的时间(date) </p>
+</li>
+<li><p>显示文件/etc/passwd中一共有多少行(wc -l /etc/passwd) </p>
+<p>passwd命令用来更改使用者的密码</p>
+</li>
+<li><p>显示2002年的全年的日历 (cal 2021)</p>
+</li>
+<li><p>显示1752年9月的月历，请注意这个月的月历是否有些特别。(cal -m 9f 1752)</p>
+</li>
+<li><p>显示1999年1月与99年1月的月历。1999年与99年是同一年吗？ </p>
+<p>(cal -m lf 1999；cal -m 1f 99；不是同一年)</p>
+</li>
+<li><p>有两个命令是用来显示当前系统中的用户情况的。用这两个命令显示现在有<br>哪些人已经登录到系统中，并查看他们是何时登录进入系统的。</p>
+<p>(who；users)</p>
+<ul>
+<li>-H 或 –heading：显示用户信息及各列的标题；</li>
+<li>-m：此参数的效果和指定”am i”字符串相同；</li>
+<li>-q 或–count：只显示登入系统的帐号名称和总人数；</li>
+</ul>
+</li>
+<li><p>只显示用户自己的登录名。(who am i)</p>
+</li>
+<li><p>使用 clear 命令，清屏。</p>
+</li>
+</ol>
+<h2 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a>man命令</h2><h4 id="查看帮助命令"><a href="#查看帮助命令" class="headerlink" title="查看帮助命令"></a>查看帮助命令</h4><p>在命令行终端中输入man man命令来查看man命令自身的帮助信息</p>
+<h4 id="man命令中常用按键以及用途"><a href="#man命令中常用按键以及用途" class="headerlink" title="man命令中常用按键以及用途"></a>man命令中常用按键以及用途</h4><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空格键</td>
+<td>向下翻一页</td>
+</tr>
+<tr>
+<td>PaGe down</td>
+<td>向下翻一页</td>
+</tr>
+<tr>
+<td>PaGe up</td>
+<td>向上翻一页</td>
+</tr>
+<tr>
+<td>home</td>
+<td>直接前往首页</td>
+</tr>
+<tr>
+<td>end</td>
+<td>直接前往尾页</td>
+</tr>
+<tr>
+<td>/</td>
+<td>从上至下搜索某个关键词，如“/linux”</td>
+</tr>
+<tr>
+<td>?</td>
+<td>从下至上搜索某个关键词，如“?linux”</td>
+</tr>
+<tr>
+<td>n</td>
+<td>定位到下一个搜索到的关键词</td>
+</tr>
+<tr>
+<td>N</td>
+<td>定位到上一个搜索到的关键词</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出帮助文档</td>
+</tr>
+</tbody></table>
+<h4 id="man命令帮助信息的结构以及意义"><a href="#man命令帮助信息的结构以及意义" class="headerlink" title="man命令帮助信息的结构以及意义"></a>man命令帮助信息的结构以及意义</h4><table>
+<thead>
+<tr>
+<th>结构名称</th>
+<th>代表意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NAME</td>
+<td>命令的名称</td>
+</tr>
+<tr>
+<td>SYNOPSIS</td>
+<td>参数的大致使用方法</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>介绍说明</td>
+</tr>
+<tr>
+<td>EXAMPLES</td>
+<td>演示（附带简单说明）</td>
+</tr>
+<tr>
+<td>OVERVIEW</td>
+<td>概述</td>
+</tr>
+<tr>
+<td>DEFAULTS</td>
+<td>默认的功能</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>具体的可用选项（带介绍）</td>
+</tr>
+<tr>
+<td>ENVIRONMENT</td>
+<td>环境变量</td>
+</tr>
+<tr>
+<td>FILES</td>
+<td>用到的文件</td>
+</tr>
+<tr>
+<td>SEE ALSO</td>
+<td>相关的资料</td>
+</tr>
+<tr>
+<td>HISTORY</td>
+<td>维护历史与联系方式</td>
+</tr>
+</tbody></table>
+<h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><p>字符界面下，用户登录系统后，由shell负责与用户交互</p>
+<p>交互的方式是提示用户输入命令</p>
+<h5 id="shell的种类"><a href="#shell的种类" class="headerlink" title="shell的种类"></a>shell的种类</h5><ul>
+<li>sh</li>
+<li>ksh</li>
+<li>csh</li>
+<li>bash</li>
+<li>dash</li>
+</ul>
+<h5 id="切换shell"><a href="#切换shell" class="headerlink" title="切换shell"></a>切换shell</h5><ul>
+<li><p>dash</p>
+</li>
+<li><p>chsh改变登录的缺省shell。用户的相关信息记录在/etc/passwd，包括缺省shell</p>
+<p>lcat /etc/passwd</p>
+</li>
+</ul>
+<h5 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h5><ul>
+<li>Ctrl-d，退出系统</li>
+<li>Ctrl-h，退格</li>
+<li>Ctrl-u，删除输入行</li>
+<li>Ctrl-c，中断程序执行</li>
+</ul>
+<h2 id="登录退出过程解析"><a href="#登录退出过程解析" class="headerlink" title="登录退出过程解析"></a>登录退出过程解析</h2><p>Unix系统启动后，init/systemd进程负责拉起所有用户进程</p>
+<p>man ps</p>
+<p>ps -ejH</p>
+<p>systemd=init（pid=1）</p>
+<h5 id="登录-1"><a href="#登录-1" class="headerlink" title="登录"></a>登录</h5><p>init进程创建getty进程守候在各个终端上</p>
+<p>当终端上有字符输入，exec login程序</p>
+<p>当username，password验证成功，fork一个shell进程</p>
+<h5 id="退出-1"><a href="#退出-1" class="headerlink" title="退出"></a>退出</h5><p>shell退出、login退出</p>
+<p>init回收login</p>
+<p>init再fork一个新的getty进程</p>
+<p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210615153728.png"></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-31T14:16:38+08:00"
-              content="2020-10-31">
-          10-31
-        </time>
-      </div>
+    
+       <div>
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-hourglass-end"></i>感谢您的阅读-------------</div>
+    
+</div>
+       </div>
+    
+      
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\03\15\Unix操作系统\" rel="bookmark">Unix操作系统</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\02\09\切片\" rel="bookmark">切片</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\01\24\lowbit函数原理\" rel="bookmark">lowbit函数原理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\01\19\C++ STL\" rel="bookmark">简单了解STL</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\10\31\“排序算法”小结\" rel="bookmark">“排序算法”小结</a></div>
+    </li>
+  </ul>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/31/%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D%E5%B0%8F%E7%BB%93/" itemprop="url">
-            <span itemprop="name">“排序算法”小结</span>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>林子渊
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="/2021/03/20/Unix%E5%85%A5%E9%97%A8/" title="Unix入门">https://0-ziyuan.com/2021/03/20/Unix入门/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/rss2.xml">
+            <span class="icon">
+              <i class="fas fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
+        </div>
     </div>
   </div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag"><i class="fa fa-tag"></i> 基础知识</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/15/Unix%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="prev" title="Unix操作系统">
+      <i class="fa fa-chevron-left"></i> Unix操作系统
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
+
+  <div
+  data-weibo-title="分享到微博"
+  data-qq-title="分享到QQ"
+  data-douban-title="分享到豆瓣"
+  class="social-share"
+  class="share-component"
 
 
+
+  data-disabled="qzone,google+,linkedin"
+  data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣...">
+   分享到：
+</div>
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -328,6 +677,7 @@ function setSidebarMarginTop (headerOffset) {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E4%B8%8E%E9%80%80%E5%87%BA"><span class="nav-number">1.</span> <span class="nav-text">登录与退出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%99%BB%E5%BD%95"><span class="nav-number">1.0.1.</span> <span class="nav-text">登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%80%E5%87%BA"><span class="nav-number">1.0.2.</span> <span class="nav-text">退出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">常见命令格式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E5%90%8D"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">命令名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%89%E9%A1%B9"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">参数</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">基本命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#man%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">man命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="nav-number">4.0.1.</span> <span class="nav-text">查看帮助命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#man%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%8C%89%E9%94%AE%E4%BB%A5%E5%8F%8A%E7%94%A8%E9%80%94"><span class="nav-number">4.0.2.</span> <span class="nav-text">man命令中常用按键以及用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#man%E5%91%BD%E4%BB%A4%E5%B8%AE%E5%8A%A9%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E6%84%8F%E4%B9%89"><span class="nav-number">4.0.3.</span> <span class="nav-text">man命令帮助信息的结构以及意义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell"><span class="nav-number">5.</span> <span class="nav-text">shell</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#shell%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">shell的种类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%87%E6%8D%A2shell"><span class="nav-number">5.0.0.2.</span> <span class="nav-text">切换shell</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">5.0.0.3.</span> <span class="nav-text">快捷键</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E9%80%80%E5%87%BA%E8%BF%87%E7%A8%8B%E8%A7%A3%E6%9E%90"><span class="nav-number">6.</span> <span class="nav-text">登录退出过程解析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%99%BB%E5%BD%95-1"><span class="nav-number">6.0.0.1.</span> <span class="nav-text">登录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%80%E5%87%BA-1"><span class="nav-number">6.0.0.2.</span> <span class="nav-text">退出</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
