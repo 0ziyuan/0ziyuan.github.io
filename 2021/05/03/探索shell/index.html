@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011144230.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011144001.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-null.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"0-ziyuan.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="探索shell">
+<meta property="og:url" content="https://0-ziyuan.com/2021/05/03/%E6%8E%A2%E7%B4%A2shell/index.html">
+<meta property="og:site_name" content="子渊学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210616134112.jpg">
+<meta property="og:image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210616110127.png">
+<meta property="og:image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210616123744.png">
+<meta property="article:published_time" content="2021-05-03T02:55:51.000Z">
+<meta property="article:modified_time" content="2021-06-16T15:13:14.081Z">
+<meta property="article:author" content="林子渊">
+<meta property="article:tag" content="基础知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210616134112.jpg">
+
+<link rel="canonical" href="https://0-ziyuan.com/2021/05/03/%E6%8E%A2%E7%B4%A2shell/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>探索shell | 子渊学习笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="子渊学习笔记" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+            <a target="_blank" rel="noopener" href="https://github.com/0ziyuan" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><script>
+ function GetRandomNum(Min,Max)
+  {
+    var Range = Max - Min;
+    var Rand = Math.random();
+    return(Min + Math.round(Rand * Range));
+  }
+function setSidebarMarginTop (headerOffset) {
+    return $('#sidebar').css({ 'margin-top': headerOffset });
+  }
+ function getHeaderOffset () {
+    return $('.header-inner').height() + CONFIG.sidebar.offset;
+  }
+  window.onload=function(){
+    var subtitle = "断红一任风吹起，结习空时不点衣。W玉界琼田三万里，着我扁舟一叶。W醉后不知天在水，满船清梦压星河。W众里寻他千百度，蓦然回首，那人却在灯火阑珊处。W醉魂应逐凌波梦，分付西风此夜凉。W相逢细卜花间问，寒雨缘何带眼湿。";
+     var mytitle = subtitle.split("W");
+     var max = mytitle.length-1;
+     var index = GetRandomNum(0,max);
+     var text = mytitle[index];
+     $("#helloTitle").html(text);
+     var headOffset = getHeaderOffset();
+     setSidebarMarginTop(headOffset);
+     //动态subtitle设置
+  }
+</script>
+
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">子渊学习笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+
+       
+       
+       <p style="color:#777;font-family:STXingkai" id="helloTitle" class="site-subtitle"></p>
+        
+        
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="fa fa-download fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-address-book fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://0-ziyuan.com/2021/05/03/%E6%8E%A2%E7%B4%A2shell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011143426.jpg">
+      <meta itemprop="name" content="林子渊">
+      <meta itemprop="description" content="Don't try to understand it, feel it.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="子渊学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          探索shell
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-03 10:55:51" itemprop="dateCreated datePublished" datetime="2021-05-03T10:55:51+08:00">2021-05-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-16 23:13:14" itemprop="dateModified" datetime="2021-06-16T23:13:14+08:00">2021-06-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unix/" itemprop="url" rel="index"><span itemprop="name">Unix</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unix/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/05/03/%E6%8E%A2%E7%B4%A2shell/" class="post-meta-item leancloud_visitors" data-flag-title="探索shell" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/05/03/%E6%8E%A2%E7%B4%A2shell/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/05/03/%E6%8E%A2%E7%B4%A2shell/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k 字</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210616134112.jpg"></p>
+<a id="more"></a>
+
+<h2 id="shell工作原理"><a href="#shell工作原理" class="headerlink" title="shell工作原理"></a>shell工作原理</h2><p>/etc/passwd决定了用户登录后执行的shell程序。有些特殊的用户，可以不是shell程序</p>
+<h4 id="shell解析用户命令"><a href="#shell解析用户命令" class="headerlink" title="shell解析用户命令"></a>shell解析用户命令</h4><p>•创建子进程执行用户命令</p>
+<p>•shell等待命令子进程退出</p>
+<p>•命令子进程退出，发送SIGCHLD信号给shell</p>
+<p>•shell在信号处理函数中处理子进程退出</p>
+<h4 id="shell进程退出"><a href="#shell进程退出" class="headerlink" title="shell进程退出"></a>shell进程退出</h4><p>•发送SIGCHLD信号给login进程</p>
+<p>•login进程处理SIGCHLD信号</p>
+<p>•退出，发送SIGCHLD信号给init进程</p>
+<p>•init进程处理SIGCHLD信号，重新fork/exec一个getty进程</p>
+<p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210616110127.png"></p>
+<p>shell内建命令会比外部命令执行得更快，执行外部命令时不但会触发磁盘 I/O，还需要 fork 出一个单独的进程来执行，执行完成后再退出。而执行内建命令相当于调用当前 Shell 进程的一个函数。内置命令可以替换一些经常使用的命令，部分提升性能</p>
+<p>Special building command → function → building command → export command</p>
+<p>•内置命令区分出special，原因是某些内置命令允许function重载</p>
+<h4 id="echo命令输出字符串"><a href="#echo命令输出字符串" class="headerlink" title="echo命令输出字符串"></a>echo命令输出字符串</h4><p>•不同的Unix系统对echo的命令做了选项扩展</p>
+<p>•如果是格式化输出，使用printf</p>
+<h2 id="shell语言"><a href="#shell语言" class="headerlink" title="shell语言"></a>shell语言</h2><p>shell负责与用户交互，虽然简单，但仍然要看成一种语言</p>
+<p>•变量</p>
+<p>•命令</p>
+<p>•循环与分支</p>
+<h4 id="命令的语法"><a href="#命令的语法" class="headerlink" title="命令的语法"></a>命令的语法</h4><p>命令+空格+[选项]+参数+(;|回车)</p>
+<p>•echo hello; ls -al</p>
+<p>•多行单条命令，一行的尾部以\结束</p>
+<p>•ls \</p>
+<p>  -al</p>
+<h4 id="完整的命令解析过程"><a href="#完整的命令解析过程" class="headerlink" title="完整的命令解析过程"></a>完整的命令解析过程</h4><p><img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20210616123744.png"></p>
+<p>•tilde是~表达式展开</p>
+<p>•变量替换</p>
+<p>•命令展开是重音符的命令展开</p>
+<p>•单词划分利用$IFS变量分割</p>
+<p>•寻找命令</p>
+<h2 id="shell变量"><a href="#shell变量" class="headerlink" title="shell变量"></a>shell变量</h2><p>set命令显示所有变量，export命令显示所有环境变量</p>
+<h4 id="shell内置一个变量表"><a href="#shell内置一个变量表" class="headerlink" title="shell内置一个变量表"></a>shell内置一个变量表</h4><p>•每个变量有环境变量或局部变量属性</p>
+<p>•变量名 à 字符串</p>
+<h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><p>•会将环境变量传递给子进程(fork)</p>
+<p>•C语言getenv()函数</p>
+<h4 id="添加修改变量"><a href="#添加修改变量" class="headerlink" title="添加修改变量"></a>添加修改变量</h4><p>•VAR=xxx</p>
+<p>•等号两侧不能由空格</p>
+<p>•export VAR=xxx添加环境变量</p>
+<h4 id="引用变量"><a href="#引用变量" class="headerlink" title="引用变量"></a>引用变量</h4><p>•$VAR或者${VAR}</p>
+<h4 id="标准变量"><a href="#标准变量" class="headerlink" title="标准变量"></a>标准变量</h4><h5 id="HOME变量"><a href="#HOME变量" class="headerlink" title="HOME变量"></a>HOME变量</h5><p>记录用户主目录</p>
+<p>•HOME=/usr</p>
+<p>•cd</p>
+<h5 id="PATH变量"><a href="#PATH变量" class="headerlink" title="PATH变量"></a>PATH变量</h5><p>给出外部程序的搜索路径</p>
+<p>•dash</p>
+<p>•PATH=</p>
+<p>•which pwd</p>
+<p>•exit</p>
+<h5 id="IFS变量"><a href="#IFS变量" class="headerlink" title="IFS变量"></a>IFS变量</h5><p>定义扩展命令参数时的分隔符</p>
+<h2 id="命令参数展开"><a href="#命令参数展开" class="headerlink" title="命令参数展开"></a>命令参数展开</h2><p>shell在解释命令时，有一个重要的步骤是展开变量得到命令参数</p>
+<p>例：ls -al *</p>
+<p>shell在解释这条命令时：</p>
+<p>•ls是命令，special builtins → functions → builtins → export command去查找</p>
+<p>•-al是一个参数</p>
+<p>•*需要展开</p>
+<h4 id="shell内部将对参数的展开"><a href="#shell内部将对参数的展开" class="headerlink" title="shell内部将对参数的展开"></a>shell内部将对参数的展开</h4><p>•-开头当成选项</p>
+<p>•双引号、单引号、重音符号开头作为字符串</p>
+<p>•$开头作为变量</p>
+<p>•&lt;&gt;作为重定向符号</p>
+<p>•|作为管道符号</p>
+<p>•其余字符串如果包含*?[]需要做路径匹配展开</p>
+<h4 id="shell路径元字符"><a href="#shell路径元字符" class="headerlink" title="shell路径元字符"></a>shell路径元字符</h4><p>！注意shell元字符并非正则表达式</p>
+<table>
+<thead>
+<tr>
+<th><strong>元字符</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>?</td>
+<td>匹配路径名的单个字符</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配路径名的任意长度的字符串</td>
+</tr>
+<tr>
+<td>[list]</td>
+<td>匹配list中任意一个字符</td>
+</tr>
+<tr>
+<td>[!list]</td>
+<td>匹配不在list中的任意一个字符</td>
+</tr>
+</tbody></table>
+<p>例：[abc]；[a-z]；[!a-z]；[a-z!]</p>
+<h4 id="反斜杠-转义"><a href="#反斜杠-转义" class="headerlink" title="反斜杠\转义"></a>反斜杠\转义</h4><p>消除shell元字符语义</p>
+<p>•rm temp?</p>
+<p>•rm temp?</p>
+<p>•echo \&lt; \&gt; \” \’ \` \$ \* ? \&amp; \| \\</p>
+<h4 id="双引号，单引号字符串"><a href="#双引号，单引号字符串" class="headerlink" title="双引号，单引号字符串"></a>双引号，单引号字符串</h4><p>双引号字符串需要展开$VAR变量，单引号，重音符号</p>
+<p>•echo “$HOME”</p>
+<p>单引号字符串不展开变量</p>
+<p>•echo ‘$HOME’</p>
+<p>重音符号表示一个内嵌命令，要先执行，然后得到输出作为参数</p>
+<p>•双引号内的重音符号要先执行</p>
+<p>•echo “`ls -a``”</p>
+<h2 id="find与grep"><a href="#find与grep" class="headerlink" title="find与grep"></a>find与grep</h2><h4 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h4><p>在文件目录树中查找文件</p>
+<p>find start-point tests action</p>
+<p>•从start-point开始查找，start-point是一个路径</p>
+<p>•tests做测试</p>
+<p>•满足条件执行action</p>
+<h5 id="测试条件"><a href="#测试条件" class="headerlink" title="测试条件"></a>测试条件</h5><table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-name  filename</td>
+<td>根据给定的filename做匹配查找</td>
+</tr>
+<tr>
+<td>-size  +-n</td>
+<td>查找大小为n的文件</td>
+</tr>
+<tr>
+<td>-type  filetype</td>
+<td>查找指定类型filetype的文件</td>
+</tr>
+<tr>
+<td>-atime  n</td>
+<td>查找access访问时间的问题</td>
+</tr>
+<tr>
+<td>-mtime  n</td>
+<td>查找修改时间的文件</td>
+</tr>
+</tbody></table>
+<p>使用命令   find ./ -name *.sh   （本身已经在要查找的目录里了）</p>
+<p>结果报错</p>
+<p>解决方法一：find ./ -name \*.sh  （将.sh转义）</p>
+<p>解决方法二：find ./ -name “*.sh”  </p>
+<p>-type</p>
+<p>•-type f 普通文件</p>
+<p>•-type d 目录文件</p>
+<h5 id="Action选项"><a href="#Action选项" class="headerlink" title="Action选项"></a>Action选项</h5><table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-print</td>
+<td>打印输出</td>
+</tr>
+<tr>
+<td>-exec  command;</td>
+<td>执行命令</td>
+</tr>
+<tr>
+<td>-ok  command;</td>
+<td>在执行命令前要求确认</td>
+</tr>
+</tbody></table>
+<h5 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h5><p>打开文件，在文件中以RE方式搜索字符串</p>
+<p>•grep [OPTION…] PATTERNS [FILE…]</p>
+<table>
+<thead>
+<tr>
+<th><strong>短选项</strong></th>
+<th><strong>长选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-c</td>
+<td>–count</td>
+<td>只显示匹配的行数</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>–ignore-case</td>
+<td>忽略大小写匹配</td>
+</tr>
+<tr>
+<td>-G</td>
+<td>–basic-regexp</td>
+<td>BRE，grep缺省</td>
+</tr>
+<tr>
+<td>-E</td>
+<td>–extended-regexp</td>
+<td>ERE，egrep缺省</td>
+</tr>
+<tr>
+<td>-e  PATTERNS</td>
+<td>–regexp=PATTERNS</td>
+<td>指定一个或多个RE</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>–invert-match</td>
+<td>显示不匹配的行</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>–line-number</td>
+<td>输出行号</td>
+</tr>
+</tbody></table>
+<h5 id="xargs"><a href="#xargs" class="headerlink" title="xargs"></a>xargs</h5><p>xargs [command [initial-arguments]]</p>
+<p>•xargs从标准输入上读，将标准输入文件按照空格/TAB拆解成参数，作为command执行参数。</p>
+<p>•查找epoll_wait函数在那个文件：find /usr/include –name “*.h” -type f | xargs grep “epoll_wait”</p>
+<h2 id="shell配置"><a href="#shell配置" class="headerlink" title="shell配置"></a>shell配置</h2><p>用户登录，启动缺省shell</p>
+<p>•man bash，查找INVOCATION</p>
+<p>•/etc/profile → ~/.bash_profile → ~/.bash_login → ~/.profile</p>
+<p>如果不是login启动的shell</p>
+<p>•/etc/bash.bashrc → ~/.bashrc</p>
+<p>用户退出</p>
+<p>•~/.bashr_logout</p>
+<h2 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h2><h4 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h4><p>显示进程</p>
+<p>•ps -ejH以树型输出所有进程</p>
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示所有进程，但不包括会话leader，不包括无终端进程</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>显示进程完整信息</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>显示所有进程</td>
+</tr>
+<tr>
+<td>-H</td>
+<td>按照树型显示</td>
+</tr>
+<tr>
+<td>-j</td>
+<td>按照job形式输出</td>
+</tr>
+</tbody></table>
+<h4 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h4><p>向进程发送信号</p>
+<p>•缺省发送SIGTERM信号，15</p>
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-l</td>
+<td>列出所有信号</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>除init进程，以及自己外的所有进程</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>发送s标志的信号</td>
+</tr>
+</tbody></table>
+<p>•信号类似于硬件中断</p>
+<p>•Ctrl-c快捷键 → 发送SIGINT信号</p>
+<p>•Ctrl-d → 发送EOF，意思是输入关闭</p>
+<h4 id="trap命令"><a href="#trap命令" class="headerlink" title="trap命令"></a>trap命令</h4><p>设置进程捕获信号后如何处理</p>
+<p>trap “command” signal numbers</p>
+<p>•trap ‘’ TERM 忽略SIGTERM信号</p>
+<p>•trap - TERM 恢复SIGTERM信号缺省处理</p>
+<h2 id="前台后台"><a href="#前台后台" class="headerlink" title="前台后台"></a>前台后台</h2><h4 id="amp-命令"><a href="#amp-命令" class="headerlink" title="&amp;命令"></a>&amp;命令</h4><p>shell命令使用&amp;表示后台执行</p>
+<p>•ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> &gt; /dev/null &amp;</p>
+<p>•nohup “command”&amp;：后台执行命令，并且该命令在用户退出登录后仍然执行</p>
+<h4 id="jobs命令"><a href="#jobs命令" class="headerlink" title="jobs命令"></a>jobs命令</h4><p>是一个builtin命令，列举后台执行的作业</p>
+<p>•man bash搜索SHELL BUILTIN COMMANDS</p>
+<h4 id="fg命令"><a href="#fg命令" class="headerlink" title="fg命令"></a>fg命令</h4><p>fg jobspec 作业编号用jobs命令查询</p>
+<h2 id="History与fc"><a href="#History与fc" class="headerlink" title="History与fc"></a>History与fc</h2><h4 id="History"><a href="#History" class="headerlink" title="History"></a>History</h4><p>Bash在执行命令后，会在内存中记录所有使用的命令。</p>
+<p>当用户退出登录，所有命令保存在~/.bash_history文件中</p>
+<p>•history命令则列出到目前为止，执行的所有命令。</p>
+<p>•~/.bash_history记录的是到上次退出前的所有命令，注意与history不同</p>
+<h4 id="fc"><a href="#fc" class="headerlink" title="fc"></a>fc</h4><p>fc是一个builtin命令。man bash搜索SHELL BUILTIN COMMANDS</p>
+<p>•fc first last ：命令先编辑从first到last的命令，然后执行</p>
+<p>•fc –s cmd ：cmd是history的命令编号，执行该编号任务</p>
+<h4 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h4><p>alias是一个builtin命令</p>
+<p>•alias ll=‘ls –al’</p>
+<h4 id="tee命令"><a href="#tee命令" class="headerlink" title="tee命令"></a>tee命令</h4><p>分离输出，同时输出到标准输出和文件</p>
+<p>•ls -al | tee dir.list</p>
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>追加到文件</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>忽略中断信号</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+    
+       <div>
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-hourglass-end"></i>感谢您的阅读-------------</div>
+    
+</div>
+       </div>
+    
+      
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\04\26\文件系统高级操作\" rel="bookmark">文件系统高级操作</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\04\20\正则表达式\" rel="bookmark">正则表达式</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\04\12\Unix文件系统介绍\" rel="bookmark">Unix文件系统介绍</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\04\02\Vi高级用法\" rel="bookmark">Vi高级用法</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\03\25\vi编辑器入门\" rel="bookmark">vi编辑器入门</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>林子渊
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="/2021/05/03/%E6%8E%A2%E7%B4%A2shell/" title="探索shell">https://0-ziyuan.com/2021/05/03/探索shell/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/rss2.xml">
+            <span class="icon">
+              <i class="fas fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag"><i class="fa fa-tag"></i> 基础知识</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/26/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C/" rel="prev" title="文件系统高级操作">
+      <i class="fa fa-chevron-left"></i> 文件系统高级操作
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/06/16/Unix%E9%80%9A%E4%BF%A1/" rel="next" title="Unix通信">
+      Unix通信 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+  <div
+  data-weibo-title="分享到微博"
+  data-qq-title="分享到QQ"
+  data-douban-title="分享到豆瓣"
+  class="social-share"
+  class="share-component"
+
+
+
+  data-disabled="qzone,google+,linkedin"
+  data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣...">
+   分享到：
+</div>
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#shell%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">shell工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#shell%E8%A7%A3%E6%9E%90%E7%94%A8%E6%88%B7%E5%91%BD%E4%BB%A4"><span class="nav-number">1.0.1.</span> <span class="nav-text">shell解析用户命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shell%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA"><span class="nav-number">1.0.2.</span> <span class="nav-text">shell进程退出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#echo%E5%91%BD%E4%BB%A4%E8%BE%93%E5%87%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.0.3.</span> <span class="nav-text">echo命令输出字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell%E8%AF%AD%E8%A8%80"><span class="nav-number">2.</span> <span class="nav-text">shell语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="nav-number">2.0.1.</span> <span class="nav-text">命令的语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="nav-number">2.0.2.</span> <span class="nav-text">完整的命令解析过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell%E5%8F%98%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">shell变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#shell%E5%86%85%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F%E8%A1%A8"><span class="nav-number">3.0.1.</span> <span class="nav-text">shell内置一个变量表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">3.0.2.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BF%AE%E6%94%B9%E5%8F%98%E9%87%8F"><span class="nav-number">3.0.3.</span> <span class="nav-text">添加修改变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E5%8F%98%E9%87%8F"><span class="nav-number">3.0.4.</span> <span class="nav-text">引用变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%8F%98%E9%87%8F"><span class="nav-number">3.0.5.</span> <span class="nav-text">标准变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#HOME%E5%8F%98%E9%87%8F"><span class="nav-number">3.0.5.1.</span> <span class="nav-text">HOME变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PATH%E5%8F%98%E9%87%8F"><span class="nav-number">3.0.5.2.</span> <span class="nav-text">PATH变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IFS%E5%8F%98%E9%87%8F"><span class="nav-number">3.0.5.3.</span> <span class="nav-text">IFS变量</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0%E5%B1%95%E5%BC%80"><span class="nav-number">4.</span> <span class="nav-text">命令参数展开</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#shell%E5%86%85%E9%83%A8%E5%B0%86%E5%AF%B9%E5%8F%82%E6%95%B0%E7%9A%84%E5%B1%95%E5%BC%80"><span class="nav-number">4.0.1.</span> <span class="nav-text">shell内部将对参数的展开</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shell%E8%B7%AF%E5%BE%84%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-number">4.0.2.</span> <span class="nav-text">shell路径元字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E6%96%9C%E6%9D%A0-%E8%BD%AC%E4%B9%89"><span class="nav-number">4.0.3.</span> <span class="nav-text">反斜杠\转义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E5%BC%95%E5%8F%B7%EF%BC%8C%E5%8D%95%E5%BC%95%E5%8F%B7%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">4.0.4.</span> <span class="nav-text">双引号，单引号字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find%E4%B8%8Egrep"><span class="nav-number">5.</span> <span class="nav-text">find与grep</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#find%E5%91%BD%E4%BB%A4"><span class="nav-number">5.0.1.</span> <span class="nav-text">find命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%9D%A1%E4%BB%B6"><span class="nav-number">5.0.1.1.</span> <span class="nav-text">测试条件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Action%E9%80%89%E9%A1%B9"><span class="nav-number">5.0.1.2.</span> <span class="nav-text">Action选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#grep%E5%91%BD%E4%BB%A4"><span class="nav-number">5.0.1.3.</span> <span class="nav-text">grep命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xargs"><span class="nav-number">5.0.1.4.</span> <span class="nav-text">xargs</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">shell配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-number">7.</span> <span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ps%E5%91%BD%E4%BB%A4"><span class="nav-number">7.0.1.</span> <span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kill%E5%91%BD%E4%BB%A4"><span class="nav-number">7.0.2.</span> <span class="nav-text">kill命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#trap%E5%91%BD%E4%BB%A4"><span class="nav-number">7.0.3.</span> <span class="nav-text">trap命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E5%8F%B0%E5%90%8E%E5%8F%B0"><span class="nav-number">8.</span> <span class="nav-text">前台后台</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#amp-%E5%91%BD%E4%BB%A4"><span class="nav-number">8.0.1.</span> <span class="nav-text">&amp;命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jobs%E5%91%BD%E4%BB%A4"><span class="nav-number">8.0.2.</span> <span class="nav-text">jobs命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fg%E5%91%BD%E4%BB%A4"><span class="nav-number">8.0.3.</span> <span class="nav-text">fg命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History%E4%B8%8Efc"><span class="nav-number">9.</span> <span class="nav-text">History与fc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#History"><span class="nav-number">9.0.1.</span> <span class="nav-text">History</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fc"><span class="nav-number">9.0.2.</span> <span class="nav-text">fc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#alias"><span class="nav-number">9.0.3.</span> <span class="nav-text">alias</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tee%E5%91%BD%E4%BB%A4"><span class="nav-number">9.0.4.</span> <span class="nav-text">tee命令</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="林子渊"
+      src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201011143426.jpg">
+  <p class="site-author-name" itemprop="name">林子渊</p>
+  <div class="site-description" itemprop="description">Don't try to understand it, feel it.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/0ziyuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;0ziyuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wanli@0-ziyuan.com" title="E-Mail → mailto:wanli@0-ziyuan.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://i.csdn.net/#/uc/profile/Later_001" title="CSDN → https:&#x2F;&#x2F;i.csdn.net&#x2F;#&#x2F;uc&#x2F;profile&#x2F;Later_001" rel="noopener" target="_blank"><i class="fab fa-codiepie fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+         
+        
+          <li>
+            <a href="/2021/06/16/Unix%E9%80%9A%E4%BF%A1/" title="Unix通信" target="_blank">Unix通信</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/03/%E6%8E%A2%E7%B4%A2shell/" title="探索shell" target="_blank">探索shell</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/26/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C/" title="文件系统高级操作" target="_blank">文件系统高级操作</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式" target="_blank">正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/12/Unix%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/" title="Unix文件系统介绍" target="_blank">Unix文件系统介绍</a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <div class="copyright">
+  
+  &copy; 2020-10-6 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">林子渊</span>
+</div>
+
+
+
+
+
+    <div class="busuanzi-count">
+    <script async="" src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <!-- 博客字数统计 -->
+    <span class="site-pv">
+      <i class="fa fa-chart-area"></i>
+      全站共<span class="post-count">22.6k</span>字 
+    </span>
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      访问用户:<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i>
+      访问次数:<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
+</div>
+
+
+
+  <div class="beian">
+    <a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">黔ICP备2020009370号</a></span>
+    
+      <img src="https://gitee.com/wanli-0ziyuan/gitee-graph-bed/raw/master/img/20201013163620.png" style="display: inline-block;">
+    
+    
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=%E8%B4%B5%E5%85%AC%E7%BD%91%E5%AE%89%E5%A4%87" rel="noopener" target="_blank">贵公网安备52230102000219号</a>
+    
+  </div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'Csy3blPagD2jJu1oKasQnYFx-9Nh9j0Va',
+      appKey     : 'VS8OlWWswHz3EJjEoWOm9Npg',
+      placeholder: "发条友善的评论~",
+      avatar     : 'monsterid',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+<!--share.js-->
+<link rel="stylesheet" href="/dist/css/share.min.css">
+<script src="/dist/js/social-share.min.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
