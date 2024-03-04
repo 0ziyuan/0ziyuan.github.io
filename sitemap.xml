@@ -433,14 +433,14 @@
   </url>
   
   <url>
-    <loc>https://sleepyfox-github.github.io/categories/Unix/</loc>
+    <loc>https://sleepyfox-github.github.io/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E5%9B%BE%E8%AE%BA/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sleepyfox-github.github.io/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E6%8E%A8%E5%AF%BC%E4%B8%8E%E9%80%92%E5%BD%92/</loc>
+    <loc>https://sleepyfox-github.github.io/categories/Unix/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -454,14 +454,7 @@
   </url>
   
   <url>
-    <loc>https://sleepyfox-github.github.io/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E5%9B%BE%E8%AE%BA/</loc>
-    <lastmod>2024-03-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sleepyfox-github.github.io/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E5%85%B3%E7%B3%BB/</loc>
+    <loc>https://sleepyfox-github.github.io/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E6%8E%A8%E5%AF%BC%E4%B8%8E%E9%80%92%E5%BD%92/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -475,7 +468,7 @@
   </url>
   
   <url>
-    <loc>https://sleepyfox-github.github.io/categories/Unix/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://sleepyfox-github.github.io/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E5%85%B3%E7%B3%BB/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -490,6 +483,13 @@
   
   <url>
     <loc>https://sleepyfox-github.github.io/categories/C/%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2024-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sleepyfox-github.github.io/categories/Unix/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
