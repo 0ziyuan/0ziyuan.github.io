@@ -104,3 +104,12 @@ rgba(35,37,58,.9),
 rgba(35,37,58,.9), 
 rgba(24,40,72,.2));
 }
+
+#veditor {
+    background-image: url(/img/site/comments_img.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: vertical
+}
