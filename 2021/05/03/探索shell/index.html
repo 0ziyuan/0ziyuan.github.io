@@ -1,0 +1,538 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>探索shell | 小狐狸的被窝</title><meta name="author" content="sleepyfox"><meta name="copyright" content="sleepyfox"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="article">
+<meta property="og:title" content="探索shell">
+<meta property="og:url" content="https://sleepyfox-github.github.io/2021/05/03/%E6%8E%A2%E7%B4%A2shell/index.html">
+<meta property="og:site_name" content="小狐狸的被窝">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sleepyfox-github.github.io/img/site/night.jpg">
+<meta property="article:published_time" content="2021-05-03T02:55:51.000Z">
+<meta property="article:modified_time" content="2022-06-08T07:38:37.942Z">
+<meta property="article:author" content="sleepyfox">
+<meta property="article:tag" content="基础知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sleepyfox-github.github.io/img/site/night.jpg"><link rel="shortcut icon" href="/img/site/favicon.png"><link rel="canonical" href="https://sleepyfox-github.github.io/2021/05/03/%E6%8E%A2%E7%B4%A2shell/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18a9ce985a63f04d9d58130f8762517d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: sleepyfox","link":"链接: ","source":"来源: 小狐狸的被窝","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '探索shell',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-08 15:38:37'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/site/avatar.jpg" onerror="onerror=null;src='/img/site/404_animation.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">24</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/site/night.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="小狐狸的被窝"><span class="site-name">小狐狸的被窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">探索shell</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-03T02:55:51.000Z" title="发表于 2021-05-03 10:55:51">2021-05-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-08T07:38:37.942Z" title="更新于 2022-06-08 15:38:37">2022-06-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unix/">Unix</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unix/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="探索shell"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="https://raw.githubusercontent.com/0ziyuan/pic_bed/main/img/20210616134112.jpg"></p>
+<span id="more"></span>
+
+<h2 id="shell工作原理"><a href="#shell工作原理" class="headerlink" title="shell工作原理"></a>shell工作原理</h2><p>&#x2F;etc&#x2F;passwd决定了用户登录后执行的shell程序。有些特殊的用户，可以不是shell程序</p>
+<h4 id="shell解析用户命令"><a href="#shell解析用户命令" class="headerlink" title="shell解析用户命令"></a>shell解析用户命令</h4><p>•创建子进程执行用户命令</p>
+<p>•shell等待命令子进程退出</p>
+<p>•命令子进程退出，发送SIGCHLD信号给shell</p>
+<p>•shell在信号处理函数中处理子进程退出</p>
+<h4 id="shell进程退出"><a href="#shell进程退出" class="headerlink" title="shell进程退出"></a>shell进程退出</h4><p>•发送SIGCHLD信号给login进程</p>
+<p>•login进程处理SIGCHLD信号</p>
+<p>•退出，发送SIGCHLD信号给init进程</p>
+<p>•init进程处理SIGCHLD信号，重新fork&#x2F;exec一个getty进程</p>
+<p><img src="https://raw.githubusercontent.com/0ziyuan/pic_bed/main/img/20210616110127.png"></p>
+<p>shell内建命令会比外部命令执行得更快，执行外部命令时不但会触发磁盘 I&#x2F;O，还需要 fork 出一个单独的进程来执行，执行完成后再退出。而执行内建命令相当于调用当前 Shell 进程的一个函数。内置命令可以替换一些经常使用的命令，部分提升性能</p>
+<p>Special building command → function → building command → export command</p>
+<p>•内置命令区分出special，原因是某些内置命令允许function重载</p>
+<h4 id="echo命令输出字符串"><a href="#echo命令输出字符串" class="headerlink" title="echo命令输出字符串"></a>echo命令输出字符串</h4><p>•不同的Unix系统对echo的命令做了选项扩展</p>
+<p>•如果是格式化输出，使用printf</p>
+<h2 id="shell语言"><a href="#shell语言" class="headerlink" title="shell语言"></a>shell语言</h2><p>shell负责与用户交互，虽然简单，但仍然要看成一种语言</p>
+<p>•变量</p>
+<p>•命令</p>
+<p>•循环与分支</p>
+<h4 id="命令的语法"><a href="#命令的语法" class="headerlink" title="命令的语法"></a>命令的语法</h4><p>命令+空格+[选项]+参数+(;|回车)</p>
+<p>•echo hello; ls -al</p>
+<p>•多行单条命令，一行的尾部以\结束</p>
+<p>•ls \</p>
+<p>  -al</p>
+<h4 id="完整的命令解析过程"><a href="#完整的命令解析过程" class="headerlink" title="完整的命令解析过程"></a>完整的命令解析过程</h4><p><img src="https://raw.githubusercontent.com/0ziyuan/pic_bed/main/img/20210616123744.png"></p>
+<p>•tilde是~表达式展开</p>
+<p>•变量替换</p>
+<p>•命令展开是重音符的命令展开</p>
+<p>•单词划分利用$IFS变量分割</p>
+<p>•寻找命令</p>
+<h2 id="shell变量"><a href="#shell变量" class="headerlink" title="shell变量"></a>shell变量</h2><p>set命令显示所有变量，export命令显示所有环境变量</p>
+<h4 id="shell内置一个变量表"><a href="#shell内置一个变量表" class="headerlink" title="shell内置一个变量表"></a>shell内置一个变量表</h4><p>•每个变量有环境变量或局部变量属性</p>
+<p>•变量名 à 字符串</p>
+<h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><p>•会将环境变量传递给子进程(fork)</p>
+<p>•C语言getenv()函数</p>
+<h4 id="添加修改变量"><a href="#添加修改变量" class="headerlink" title="添加修改变量"></a>添加修改变量</h4><p>•VAR&#x3D;xxx</p>
+<p>•等号两侧不能由空格</p>
+<p>•export VAR&#x3D;xxx添加环境变量</p>
+<h4 id="引用变量"><a href="#引用变量" class="headerlink" title="引用变量"></a>引用变量</h4><p>•$VAR或者${VAR}</p>
+<h4 id="标准变量"><a href="#标准变量" class="headerlink" title="标准变量"></a>标准变量</h4><h5 id="HOME变量"><a href="#HOME变量" class="headerlink" title="HOME变量"></a>HOME变量</h5><p>记录用户主目录</p>
+<p>•HOME&#x3D;&#x2F;usr</p>
+<p>•cd</p>
+<h5 id="PATH变量"><a href="#PATH变量" class="headerlink" title="PATH变量"></a>PATH变量</h5><p>给出外部程序的搜索路径</p>
+<p>•dash</p>
+<p>•PATH&#x3D;</p>
+<p>•which pwd</p>
+<p>•exit</p>
+<h5 id="IFS变量"><a href="#IFS变量" class="headerlink" title="IFS变量"></a>IFS变量</h5><p>定义扩展命令参数时的分隔符</p>
+<h2 id="命令参数展开"><a href="#命令参数展开" class="headerlink" title="命令参数展开"></a>命令参数展开</h2><p>shell在解释命令时，有一个重要的步骤是展开变量得到命令参数</p>
+<p>例：ls -al *</p>
+<p>shell在解释这条命令时：</p>
+<p>•ls是命令，special builtins → functions → builtins → export command去查找</p>
+<p>•-al是一个参数</p>
+<p>•*需要展开</p>
+<h4 id="shell内部将对参数的展开"><a href="#shell内部将对参数的展开" class="headerlink" title="shell内部将对参数的展开"></a>shell内部将对参数的展开</h4><p>•-开头当成选项</p>
+<p>•双引号、单引号、重音符号开头作为字符串</p>
+<p>•$开头作为变量</p>
+<p>•&lt;&gt;作为重定向符号</p>
+<p>•|作为管道符号</p>
+<p>•其余字符串如果包含*?[]需要做路径匹配展开</p>
+<h4 id="shell路径元字符"><a href="#shell路径元字符" class="headerlink" title="shell路径元字符"></a>shell路径元字符</h4><p>！注意shell元字符并非正则表达式</p>
+<table>
+<thead>
+<tr>
+<th><strong>元字符</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>?</td>
+<td>匹配路径名的单个字符</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配路径名的任意长度的字符串</td>
+</tr>
+<tr>
+<td>[list]</td>
+<td>匹配list中任意一个字符</td>
+</tr>
+<tr>
+<td>[!list]</td>
+<td>匹配不在list中的任意一个字符</td>
+</tr>
+</tbody></table>
+<p>例：[abc]；[a-z]；[!a-z]；[a-z!]</p>
+<h4 id="反斜杠-转义"><a href="#反斜杠-转义" class="headerlink" title="反斜杠\转义"></a>反斜杠\转义</h4><p>消除shell元字符语义</p>
+<p>•rm temp?</p>
+<p>•rm temp?</p>
+<p>•echo \&lt; \&gt; \” \’ \&#96; \$ \* ? \&amp; \| \\</p>
+<h4 id="双引号，单引号字符串"><a href="#双引号，单引号字符串" class="headerlink" title="双引号，单引号字符串"></a>双引号，单引号字符串</h4><p>双引号字符串需要展开$VAR变量，单引号，重音符号</p>
+<p>•echo “$HOME”</p>
+<p>单引号字符串不展开变量</p>
+<p>•echo ‘$HOME’</p>
+<p>重音符号表示一个内嵌命令，要先执行，然后得到输出作为参数</p>
+<p>•双引号内的重音符号要先执行</p>
+<p>•echo “`ls -a`&#96;”</p>
+<h2 id="find与grep"><a href="#find与grep" class="headerlink" title="find与grep"></a>find与grep</h2><h4 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h4><p>在文件目录树中查找文件</p>
+<p>find start-point tests action</p>
+<p>•从start-point开始查找，start-point是一个路径</p>
+<p>•tests做测试</p>
+<p>•满足条件执行action</p>
+<h5 id="测试条件"><a href="#测试条件" class="headerlink" title="测试条件"></a>测试条件</h5><table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-name  filename</td>
+<td>根据给定的filename做匹配查找</td>
+</tr>
+<tr>
+<td>-size  +-n</td>
+<td>查找大小为n的文件</td>
+</tr>
+<tr>
+<td>-type  filetype</td>
+<td>查找指定类型filetype的文件</td>
+</tr>
+<tr>
+<td>-atime  n</td>
+<td>查找access访问时间的问题</td>
+</tr>
+<tr>
+<td>-mtime  n</td>
+<td>查找修改时间的文件</td>
+</tr>
+</tbody></table>
+<p>使用命令   find .&#x2F; -name *.sh   （本身已经在要查找的目录里了）</p>
+<p>结果报错</p>
+<p>解决方法一：find .&#x2F; -name \*.sh  （将.sh转义）</p>
+<p>解决方法二：find .&#x2F; -name “*.sh”  </p>
+<p>-type</p>
+<p>•-type f 普通文件</p>
+<p>•-type d 目录文件</p>
+<h5 id="Action选项"><a href="#Action选项" class="headerlink" title="Action选项"></a>Action选项</h5><table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-print</td>
+<td>打印输出</td>
+</tr>
+<tr>
+<td>-exec  command;</td>
+<td>执行命令</td>
+</tr>
+<tr>
+<td>-ok  command;</td>
+<td>在执行命令前要求确认</td>
+</tr>
+</tbody></table>
+<h5 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h5><p>打开文件，在文件中以RE方式搜索字符串</p>
+<p>•grep [OPTION…] PATTERNS [FILE…]</p>
+<table>
+<thead>
+<tr>
+<th><strong>短选项</strong></th>
+<th><strong>长选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-c</td>
+<td>–count</td>
+<td>只显示匹配的行数</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>–ignore-case</td>
+<td>忽略大小写匹配</td>
+</tr>
+<tr>
+<td>-G</td>
+<td>–basic-regexp</td>
+<td>BRE，grep缺省</td>
+</tr>
+<tr>
+<td>-E</td>
+<td>–extended-regexp</td>
+<td>ERE，egrep缺省</td>
+</tr>
+<tr>
+<td>-e  PATTERNS</td>
+<td>–regexp&#x3D;PATTERNS</td>
+<td>指定一个或多个RE</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>–invert-match</td>
+<td>显示不匹配的行</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>–line-number</td>
+<td>输出行号</td>
+</tr>
+</tbody></table>
+<h5 id="xargs"><a href="#xargs" class="headerlink" title="xargs"></a>xargs</h5><p>xargs [command [initial-arguments]]</p>
+<p>•xargs从标准输入上读，将标准输入文件按照空格&#x2F;TAB拆解成参数，作为command执行参数。</p>
+<p>•查找epoll_wait函数在那个文件：find &#x2F;usr&#x2F;include –name “*.h” -type f | xargs grep “epoll_wait”</p>
+<h2 id="shell配置"><a href="#shell配置" class="headerlink" title="shell配置"></a>shell配置</h2><p>用户登录，启动缺省shell</p>
+<p>•man bash，查找INVOCATION</p>
+<p>•&#x2F;etc&#x2F;profile → ~&#x2F;.bash_profile → ~&#x2F;.bash_login → ~&#x2F;.profile</p>
+<p>如果不是login启动的shell</p>
+<p>•&#x2F;etc&#x2F;bash.bashrc → ~&#x2F;.bashrc</p>
+<p>用户退出</p>
+<p>•~&#x2F;.bashr_logout</p>
+<h2 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h2><h4 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h4><p>显示进程</p>
+<p>•ps -ejH以树型输出所有进程</p>
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示所有进程，但不包括会话leader，不包括无终端进程</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>显示进程完整信息</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>显示所有进程</td>
+</tr>
+<tr>
+<td>-H</td>
+<td>按照树型显示</td>
+</tr>
+<tr>
+<td>-j</td>
+<td>按照job形式输出</td>
+</tr>
+</tbody></table>
+<h4 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h4><p>向进程发送信号</p>
+<p>•缺省发送SIGTERM信号，15</p>
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-l</td>
+<td>列出所有信号</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>除init进程，以及自己外的所有进程</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>发送s标志的信号</td>
+</tr>
+</tbody></table>
+<p>•信号类似于硬件中断</p>
+<p>•Ctrl-c快捷键 → 发送SIGINT信号</p>
+<p>•Ctrl-d → 发送EOF，意思是输入关闭</p>
+<h4 id="trap命令"><a href="#trap命令" class="headerlink" title="trap命令"></a>trap命令</h4><p>设置进程捕获信号后如何处理</p>
+<p>trap “command” signal numbers</p>
+<p>•trap ‘’ TERM 忽略SIGTERM信号</p>
+<p>•trap - TERM 恢复SIGTERM信号缺省处理</p>
+<h2 id="前台后台"><a href="#前台后台" class="headerlink" title="前台后台"></a>前台后台</h2><h4 id="命令"><a href="#命令" class="headerlink" title="&amp;命令"></a>&amp;命令</h4><p>shell命令使用&amp;表示后台执行</p>
+<p>•ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> &gt; &#x2F;dev&#x2F;null &amp;</p>
+<p>•nohup “command”&amp;：后台执行命令，并且该命令在用户退出登录后仍然执行</p>
+<h4 id="jobs命令"><a href="#jobs命令" class="headerlink" title="jobs命令"></a>jobs命令</h4><p>是一个builtin命令，列举后台执行的作业</p>
+<p>•man bash搜索SHELL BUILTIN COMMANDS</p>
+<h4 id="fg命令"><a href="#fg命令" class="headerlink" title="fg命令"></a>fg命令</h4><p>fg jobspec 作业编号用jobs命令查询</p>
+<h2 id="History与fc"><a href="#History与fc" class="headerlink" title="History与fc"></a>History与fc</h2><h4 id="History"><a href="#History" class="headerlink" title="History"></a>History</h4><p>Bash在执行命令后，会在内存中记录所有使用的命令。</p>
+<p>当用户退出登录，所有命令保存在~&#x2F;.bash_history文件中</p>
+<p>•history命令则列出到目前为止，执行的所有命令。</p>
+<p>•~&#x2F;.bash_history记录的是到上次退出前的所有命令，注意与history不同</p>
+<h4 id="fc"><a href="#fc" class="headerlink" title="fc"></a>fc</h4><p>fc是一个builtin命令。man bash搜索SHELL BUILTIN COMMANDS</p>
+<p>•fc first last ：命令先编辑从first到last的命令，然后执行</p>
+<p>•fc –s cmd ：cmd是history的命令编号，执行该编号任务</p>
+<h4 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h4><p>alias是一个builtin命令</p>
+<p>•alias ll&#x3D;‘ls –al’</p>
+<h4 id="tee命令"><a href="#tee命令" class="headerlink" title="tee命令"></a>tee命令</h4><p>分离输出，同时输出到标准输出和文件</p>
+<p>•ls -al | tee dir.list</p>
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>追加到文件</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>忽略中断信号</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://sleepyfox-github.github.io">sleepyfox</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://sleepyfox-github.github.io/2021/05/03/%E6%8E%A2%E7%B4%A2shell/">https://sleepyfox-github.github.io/2021/05/03/探索shell/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://sleepyfox-github.github.io" target="_blank">小狐狸的被窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a></div><div class="post_share"><div class="social-share" data-image="/img/site/night.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/05/10/Unix%E9%80%9A%E4%BF%A1/" title="Unix通信"><img class="cover" src="/img/site/evening.jpg" onerror="onerror=null;src='/img/site/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Unix通信</div></div></a></div><div class="next-post pull-right"><a href="/2021/04/26/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C/" title="文件系统高级操作"><img class="cover" src="/img/site/evening.jpg" onerror="onerror=null;src='/img/site/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">文件系统高级操作</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/10/13/Algorithms/" title="Algorithms"><img class="cover" src="/img/site/evening.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-12</div><div class="title">Algorithms</div></div></a></div><div><a href="/2021/01/19/C++%20STL/" title="简单了解STL"><img class="cover" src="/img/site/morning.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-19</div><div class="title">简单了解STL</div></div></a></div><div><a href="/2020/10/13/Foundations-of-Logic/" title="Foundations of Logic"><img class="cover" src="/img/site/evening.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-12</div><div class="title">Foundations of Logic</div></div></a></div><div><a href="/2021/05/20/Gnu%E5%B7%A5%E5%85%B7%E9%93%BE/" title="Gnu工具链"><img class="cover" src="/img/site/afternoon.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-20</div><div class="title">Gnu工具链</div></div></a></div><div><a href="/2020/10/13/Graph-Theory/" title="Graph Theory"><img class="cover" src="/img/site/morning.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-12</div><div class="title">Graph Theory</div></div></a></div><div><a href="/2020/10/13/Induction-and-Recursion/" title="Induction and  Recursion"><img class="cover" src="/img/site/evening.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-12</div><div class="title">Induction and  Recursion</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Waline</span><span id="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/site/avatar.jpg" onerror="this.onerror=null;this.src='/img/site/404_animation.gif'" alt="avatar"/></div><div class="author-info__name">sleepyfox</div><div class="author-info__description">小憩怡神，久卧伤身</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">24</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sleepyfox-github"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/436569811" target="_blank" title="bilibili"><i class="fa-brands fa-bilibili" style="color: #00a1d6;"></i></a><a class="social-icon" href="mailto:wanli.0ziyuan@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://i.csdn.net/#/uc/profile/Later_001" target="_blank" title="CSDN"><i class="fab fa-codiepie" style="color: #fc5531;"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=3509325157&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">shell工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#shell%E8%A7%A3%E6%9E%90%E7%94%A8%E6%88%B7%E5%91%BD%E4%BB%A4"><span class="toc-number">1.0.1.</span> <span class="toc-text">shell解析用户命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shell%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA"><span class="toc-number">1.0.2.</span> <span class="toc-text">shell进程退出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#echo%E5%91%BD%E4%BB%A4%E8%BE%93%E5%87%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.0.3.</span> <span class="toc-text">echo命令输出字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">shell语言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-number">2.0.1.</span> <span class="toc-text">命令的语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="toc-number">2.0.2.</span> <span class="toc-text">完整的命令解析过程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E5%8F%98%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">shell变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#shell%E5%86%85%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F%E8%A1%A8"><span class="toc-number">3.0.1.</span> <span class="toc-text">shell内置一个变量表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">3.0.2.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%BF%AE%E6%94%B9%E5%8F%98%E9%87%8F"><span class="toc-number">3.0.3.</span> <span class="toc-text">添加修改变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E5%8F%98%E9%87%8F"><span class="toc-number">3.0.4.</span> <span class="toc-text">引用变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%8F%98%E9%87%8F"><span class="toc-number">3.0.5.</span> <span class="toc-text">标准变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#HOME%E5%8F%98%E9%87%8F"><span class="toc-number">3.0.5.1.</span> <span class="toc-text">HOME变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PATH%E5%8F%98%E9%87%8F"><span class="toc-number">3.0.5.2.</span> <span class="toc-text">PATH变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IFS%E5%8F%98%E9%87%8F"><span class="toc-number">3.0.5.3.</span> <span class="toc-text">IFS变量</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0%E5%B1%95%E5%BC%80"><span class="toc-number">4.</span> <span class="toc-text">命令参数展开</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#shell%E5%86%85%E9%83%A8%E5%B0%86%E5%AF%B9%E5%8F%82%E6%95%B0%E7%9A%84%E5%B1%95%E5%BC%80"><span class="toc-number">4.0.1.</span> <span class="toc-text">shell内部将对参数的展开</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shell%E8%B7%AF%E5%BE%84%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-number">4.0.2.</span> <span class="toc-text">shell路径元字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E6%96%9C%E6%9D%A0-%E8%BD%AC%E4%B9%89"><span class="toc-number">4.0.3.</span> <span class="toc-text">反斜杠\转义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E5%BC%95%E5%8F%B7%EF%BC%8C%E5%8D%95%E5%BC%95%E5%8F%B7%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.0.4.</span> <span class="toc-text">双引号，单引号字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find%E4%B8%8Egrep"><span class="toc-number">5.</span> <span class="toc-text">find与grep</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#find%E5%91%BD%E4%BB%A4"><span class="toc-number">5.0.1.</span> <span class="toc-text">find命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%9D%A1%E4%BB%B6"><span class="toc-number">5.0.1.1.</span> <span class="toc-text">测试条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Action%E9%80%89%E9%A1%B9"><span class="toc-number">5.0.1.2.</span> <span class="toc-text">Action选项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grep%E5%91%BD%E4%BB%A4"><span class="toc-number">5.0.1.3.</span> <span class="toc-text">grep命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#xargs"><span class="toc-number">5.0.1.4.</span> <span class="toc-text">xargs</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E9%85%8D%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">shell配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">7.</span> <span class="toc-text">进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ps%E5%91%BD%E4%BB%A4"><span class="toc-number">7.0.1.</span> <span class="toc-text">ps命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kill%E5%91%BD%E4%BB%A4"><span class="toc-number">7.0.2.</span> <span class="toc-text">kill命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#trap%E5%91%BD%E4%BB%A4"><span class="toc-number">7.0.3.</span> <span class="toc-text">trap命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E5%90%8E%E5%8F%B0"><span class="toc-number">8.</span> <span class="toc-text">前台后台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4"><span class="toc-number">8.0.1.</span> <span class="toc-text">&amp;命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jobs%E5%91%BD%E4%BB%A4"><span class="toc-number">8.0.2.</span> <span class="toc-text">jobs命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fg%E5%91%BD%E4%BB%A4"><span class="toc-number">8.0.3.</span> <span class="toc-text">fg命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#History%E4%B8%8Efc"><span class="toc-number">9.</span> <span class="toc-text">History与fc</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#History"><span class="toc-number">9.0.1.</span> <span class="toc-text">History</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fc"><span class="toc-number">9.0.2.</span> <span class="toc-text">fc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#alias"><span class="toc-number">9.0.3.</span> <span class="toc-text">alias</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tee%E5%91%BD%E4%BB%A4"><span class="toc-number">9.0.4.</span> <span class="toc-text">tee命令</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/03/hello-world/" title="Hello World"><img src="/img/site/morning.jpg" onerror="this.onerror=null;this.src='/img/site/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2024/03/03/hello-world/" title="Hello World">Hello World</a><time datetime="2024-03-03T02:51:14.183Z" title="发表于 2024-03-03 10:51:14">2024-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/30/Shell%E7%BC%96%E7%A8%8B/" title="Shell编程"><img src="/img/site/night.jpg" onerror="this.onerror=null;this.src='/img/site/404.jpg'" alt="Shell编程"/></a><div class="content"><a class="title" href="/2021/05/30/Shell%E7%BC%96%E7%A8%8B/" title="Shell编程">Shell编程</a><time datetime="2021-05-30T10:41:35.000Z" title="发表于 2021-05-30 18:41:35">2021-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/22/%E6%82%BC%E5%BF%B5/" title="悼念"><img src="/img/site/morning.jpg" onerror="this.onerror=null;this.src='/img/site/404.jpg'" alt="悼念"/></a><div class="content"><a class="title" href="/2021/05/22/%E6%82%BC%E5%BF%B5/" title="悼念">悼念</a><time datetime="2021-05-22T10:08:58.000Z" title="发表于 2021-05-22 18:08:58">2021-05-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/20/Gnu%E5%B7%A5%E5%85%B7%E9%93%BE/" title="Gnu工具链"><img src="/img/site/afternoon.jpg" onerror="this.onerror=null;this.src='/img/site/404.jpg'" alt="Gnu工具链"/></a><div class="content"><a class="title" href="/2021/05/20/Gnu%E5%B7%A5%E5%85%B7%E9%93%BE/" title="Gnu工具链">Gnu工具链</a><time datetime="2021-05-20T09:36:13.000Z" title="发表于 2021-05-20 17:36:13">2021-05-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/10/Unix%E9%80%9A%E4%BF%A1/" title="Unix通信"><img src="/img/site/evening.jpg" onerror="this.onerror=null;this.src='/img/site/404.jpg'" alt="Unix通信"/></a><div class="content"><a class="title" href="/2021/05/10/Unix%E9%80%9A%E4%BF%A1/" title="Unix通信">Unix通信</a><time datetime="2021-05-10T13:01:40.000Z" title="发表于 2021-05-10 21:01:40">2021-05-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By sleepyfox</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+
+  const initWaline = (Fn) => {
+    const waline = Fn(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://blog-server-one-green.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+
+    const destroyWaline = () => {
+      waline.destroy()
+    }
+
+    btf.addGlobalFn('pjax', destroyWaline, 'destroyWaline')
+  }
+
+  const loadWaline = async () => {
+    if (initFn) initWaline(initFn)
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/@waline/client@3.1.2/dist/waline.min.css')
+      const { init } = await import('https://cdn.jsdelivr.net/npm/@waline/client@3.1.2/dist/waline.min.js')
+      initFn = init || Waline.init
+      initWaline(initFn)
+      window.walineFn = initFn
+    }
+  }
+
+  if ('Waline' === 'Waline' || !true) {
+    if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '4T3mzVfUAEdXttw2QqpBWQOP-MdYXbMMI',
+      appKey: 'R4ZUc8jUwXn8lZTOxHi7YTmL',
+      avatar: 'monsterid',
+      serverURLs: 'https://4T3mzVfU.api.lncldglobal.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Waline' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fishes.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

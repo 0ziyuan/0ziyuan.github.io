@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>git学习导引 | 小狐狸的被窝</title><meta name="author" content="sleepyfox"><meta name="copyright" content="sleepyfox"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="article">
+<meta property="og:title" content="git学习导引">
+<meta property="og:url" content="https://sleepyfox-github.github.io/2020/10/30/git%E5%AD%A6%E4%B9%A0%E5%AF%BC%E5%BC%95/index.html">
+<meta property="og:site_name" content="小狐狸的被窝">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sleepyfox-github.github.io/img/site/evening.jpg">
+<meta property="article:published_time" content="2020-10-30T13:17:18.000Z">
+<meta property="article:modified_time" content="2022-06-08T08:09:24.649Z">
+<meta property="article:author" content="sleepyfox">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sleepyfox-github.github.io/img/site/evening.jpg"><link rel="shortcut icon" href="/img/site/favicon.png"><link rel="canonical" href="https://sleepyfox-github.github.io/2020/10/30/git%E5%AD%A6%E4%B9%A0%E5%AF%BC%E5%BC%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18a9ce985a63f04d9d58130f8762517d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: sleepyfox","link":"链接: ","source":"来源: 小狐狸的被窝","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'git学习导引',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-08 16:09:24'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/site/avatar.jpg" onerror="onerror=null;src='/img/site/404_animation.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">24</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/site/evening.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="小狐狸的被窝"><span class="site-name">小狐狸的被窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">git学习导引</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-30T13:17:18.000Z" title="发表于 2020-10-30 21:17:18">2020-10-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-08T08:09:24.649Z" title="更新于 2022-06-08 16:09:24">2022-06-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">769</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="git学习导引"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><img src="https://raw.githubusercontent.com/0ziyuan/pic_bed/main/img/20201031001553.jpg" style="zoom:200%;" />
+
+<span id="more"></span>
+
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>对于刚接触github的朋友，git是一个容易让人犯迷糊的事物。本文首先将对git作简要介绍，然后向大家推荐相应的学习内容，希望能帮助到你（*＾-＾*）</p>
+<h4 id="git简介"><a href="#git简介" class="headerlink" title="git简介"></a>git简介</h4><h5 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h5><p>当下最先进的开源<strong>分布式版本控制系统</strong>，可以高效便捷地管理大大小小的项目版本。</p>
+<h5 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h5><p>分布式结构就是将一个完整的系统，按照业务功能，拆分成一个个独立的子系统，在分布式结构中，每个子系统就被称为“服务”。这些子系统能够独立运行在web容器中，它们之间通过RPC方式通信。</p>
+<p>举个例子，假设需要开发一个在线商城。按照微服务的思想，我们需要按照功能模块拆分成多个独立的服务，如：用户服务、产品服务、订单服务、后台管理服务、数据分析服务等等。这一个个服务都是一个个独立的项目，可以独立运行。如果服务之间有依赖关系，那么通过RPC方式调用。</p>
+<p>这样的好处有很多：</p>
+<ol>
+<li>系统之间的耦合度大大降低，可以独立开发、独立部署、独立测试，系统与系统之间的边界非常明确，排错也变得相当容易，开发效率大大提升。</li>
+<li>系统之间的耦合度降低，从而系统更易于扩展。我们可以针对性地扩展某些服务。假设这个商城要搞一次大促，下单量可能会大大提升，因此我们可以针对性地提升订单系统、产品系统的节点数量，而对于后台管理系统、数据分析系统而言，节点数量维持原有水平即可。</li>
+<li>服务的复用性更高。比如，当我们将用户系统作为单独的服务后，该公司所有的产品都可以使用该系统作为用户系统，无需重复开发。</li>
+</ol>
+<h5 id="版本控制系统"><a href="#版本控制系统" class="headerlink" title="版本控制系统"></a>版本控制系统</h5><p>版本控制是指对软件开发过程中各种程序代码、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/286550">配置文件</a>及说明文档等文件变更的管理。</p>
+<p>通俗地说就是对一个或若干个文件的<strong>内容改动情况按照特定的版本号进行保存</strong>，以便将来浏览者快速清晰了解文件的改动信息（内容变化信息，内容改动时间，作者等）</p>
+<h4 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h4><p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/git-five-minutes-tutorial.html">Git五分钟教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/manual/git-guide/">git - 简明指南</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/git-gui-window.html">Git GUI使用方法</a></p>
+<h4 id="一般使用"><a href="#一般使用" class="headerlink" title="一般使用"></a>一般使用</h4><p>下表中不明白的地方用的时候稍微查下，理解下，平时用多了会熟悉的</p>
+<p><img src="https://raw.githubusercontent.com/0ziyuan/pic_bed/main/img/20201030212828.png"></p>
+<h4 id="系统学习"><a href="#系统学习" class="headerlink" title="系统学习"></a>系统学习</h4><h5 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h5><p>选一个即可</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-tutorial.html">Git 教程|菜鸟教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰的Git教程</a></p>
+<h5 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h5><p><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">git官方中文文档</a></p>
+<h5 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h5><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Xt411g7TL?zw">版本控制 Git 视频教程全集（62P）| 6 小时从入门到精通</a></p>
+<div style="position:relative;padding:30% 45%；">
+<iframe src="https://player.bilibili.com/player.html?aid=59634634&bvid=BV1Xt411g7TL&cid=103887194&page=1&high_quality=1" scrolling="yes" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%; height: 500px; max-width: 100%；align:center; padding:20px 0;"> 
+</iframe>
+</div>
+
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20004877/answer/282033178">分布式与集群的区别|知乎</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://feichen.blog.csdn.net/article/details/81744744?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.pc_relevant_is_cache&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.pc_relevant_is_cache">git常用命令速查表-桌面图</a></p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://sleepyfox-github.github.io">sleepyfox</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://sleepyfox-github.github.io/2020/10/30/git%E5%AD%A6%E4%B9%A0%E5%AF%BC%E5%BC%95/">https://sleepyfox-github.github.io/2020/10/30/git学习导引/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://sleepyfox-github.github.io" target="_blank">小狐狸的被窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/git/">git</a></div><div class="post_share"><div class="social-share" data-image="/img/site/evening.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/10/31/%E2%80%9C%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E2%80%9D%E5%B0%8F%E7%BB%93/" title="“排序算法”小结"><img class="cover" src="/img/site/evening.jpg" onerror="onerror=null;src='/img/site/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">“排序算法”小结</div></div></a></div><div class="next-post pull-right"><a href="/2020/10/25/%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/" title="拼图游戏"><img class="cover" src="/img/site/afternoon.jpg" onerror="onerror=null;src='/img/site/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">拼图游戏</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Waline</span><span id="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/site/avatar.jpg" onerror="this.onerror=null;this.src='/img/site/404_animation.gif'" alt="avatar"/></div><div class="author-info__name">sleepyfox</div><div class="author-info__description">小憩怡神，久卧伤身</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">24</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sleepyfox-github"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/436569811" target="_blank" title="bilibili"><i class="fa-brands fa-bilibili" style="color: #00a1d6;"></i></a><a class="social-icon" href="mailto:wanli.0ziyuan@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://i.csdn.net/#/uc/profile/Later_001" target="_blank" title="CSDN"><i class="fab fa-codiepie" style="color: #fc5531;"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=3509325157&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">git简介</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Git"><span class="toc-number">2.1.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">分布式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.3.</span> <span class="toc-text">版本控制系统</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="toc-number">3.</span> <span class="toc-text">快速上手</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">一般使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0"><span class="toc-number">5.</span> <span class="toc-text">系统学习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%AB%99"><span class="toc-number">5.1.</span> <span class="toc-text">网站</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-number">5.2.</span> <span class="toc-text">官方文档</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%86%E9%A2%91"><span class="toc-number">5.3.</span> <span class="toc-text">视频</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/03/hello-world/" title="Hello World"><img src="/img/site/morning.jpg" onerror="this.onerror=null;this.src='/img/site/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2024/03/03/hello-world/" title="Hello World">Hello World</a><time datetime="2024-03-03T02:51:14.183Z" title="发表于 2024-03-03 10:51:14">2024-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/30/Shell%E7%BC%96%E7%A8%8B/" title="Shell编程"><img src="/img/site/night.jpg" onerror="this.onerror=null;this.src='/img/site/404.jpg'" alt="Shell编程"/></a><div class="content"><a class="title" href="/2021/05/30/Shell%E7%BC%96%E7%A8%8B/" title="Shell编程">Shell编程</a><time datetime="2021-05-30T10:41:35.000Z" title="发表于 2021-05-30 18:41:35">2021-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/22/%E6%82%BC%E5%BF%B5/" title="悼念"><img src="/img/site/morning.jpg" onerror="this.onerror=null;this.src='/img/site/404.jpg'" alt="悼念"/></a><div class="content"><a class="title" href="/2021/05/22/%E6%82%BC%E5%BF%B5/" title="悼念">悼念</a><time datetime="2021-05-22T10:08:58.000Z" title="发表于 2021-05-22 18:08:58">2021-05-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/20/Gnu%E5%B7%A5%E5%85%B7%E9%93%BE/" title="Gnu工具链"><img src="/img/site/afternoon.jpg" onerror="this.onerror=null;this.src='/img/site/404.jpg'" alt="Gnu工具链"/></a><div class="content"><a class="title" href="/2021/05/20/Gnu%E5%B7%A5%E5%85%B7%E9%93%BE/" title="Gnu工具链">Gnu工具链</a><time datetime="2021-05-20T09:36:13.000Z" title="发表于 2021-05-20 17:36:13">2021-05-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/10/Unix%E9%80%9A%E4%BF%A1/" title="Unix通信"><img src="/img/site/evening.jpg" onerror="this.onerror=null;this.src='/img/site/404.jpg'" alt="Unix通信"/></a><div class="content"><a class="title" href="/2021/05/10/Unix%E9%80%9A%E4%BF%A1/" title="Unix通信">Unix通信</a><time datetime="2021-05-10T13:01:40.000Z" title="发表于 2021-05-10 21:01:40">2021-05-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By sleepyfox</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+
+  const initWaline = (Fn) => {
+    const waline = Fn(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://blog-server-one-green.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+
+    const destroyWaline = () => {
+      waline.destroy()
+    }
+
+    btf.addGlobalFn('pjax', destroyWaline, 'destroyWaline')
+  }
+
+  const loadWaline = async () => {
+    if (initFn) initWaline(initFn)
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/@waline/client@3.1.2/dist/waline.min.css')
+      const { init } = await import('https://cdn.jsdelivr.net/npm/@waline/client@3.1.2/dist/waline.min.js')
+      initFn = init || Waline.init
+      initWaline(initFn)
+      window.walineFn = initFn
+    }
+  }
+
+  if ('Waline' === 'Waline' || !true) {
+    if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '4T3mzVfUAEdXttw2QqpBWQOP-MdYXbMMI',
+      appKey: 'R4ZUc8jUwXn8lZTOxHi7YTmL',
+      avatar: 'monsterid',
+      serverURLs: 'https://4T3mzVfU.api.lncldglobal.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Waline' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fishes.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
