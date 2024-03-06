@@ -4,7 +4,6 @@ $(document).ready(function () {
       resolution: 512,
       dropRadius: 10, //px
       perturbance: 0.04,
-      mobile: true,
     });
   } catch (e) {
     $(".error").show().text(e);
