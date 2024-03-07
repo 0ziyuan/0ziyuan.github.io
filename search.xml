@@ -8,7 +8,7 @@
       <link href="/2024/03/03/hello-world/"/>
       <url>/2024/03/03/hello-world/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://0-ziyuan.com/">sleepyfox’s blog</a>! This is my very first post. Click <a href="https://sleepyfox-github.github.io/about/">about</a> for more info. If you get any problems when visiting my blog, you can contact me through <a href="mailto:wanli.0ziyuan@gmail.com">my email</a>. I’d be delighted if you star me on <a href="https://github.com/sleepyfox-github?tab=repositories">GitHub</a>.😄</p><h3 id="Why-I-build-this-blog-site"><a href="#Why-I-build-this-blog-site" class="headerlink" title="Why I build this blog site"></a>Why I build this blog site</h3><ol><li>记录学习；</li><li>分享交流；</li><li>Just for fun..😂</li></ol><h3 id="How-I-build-this-blog-site"><a href="#How-I-build-this-blog-site" class="headerlink" title="How I build this blog site"></a>How I build this blog site</h3><p>Hexo生成静态页面，然后将代码托管到GitHub Pages。</p><p>文章编辑工具用的是Typora。</p><p>Valine评论系统借助LeanCloud作为数据库搭建。</p><p>Waline评论系统除了LeanCloud云数据库，还使用了Vercel部署服务端。</p><p>博客原本使用的主题为 Next下的Muse，大致效果如下图：</p><p>![previous blog page](img&#x2F;post&#x2F;Hello World&#x2F;previous blog page.png)</p><p>![previous blog post](img&#x2F;post&#x2F;Hello World&#x2F;previous blog post.png)</p><p>主要参照教程如下：</p><ul><li><p><a href="https://zhuanlan.zhihu.com/p/102592286?utm_source=qq&utm_medium=social&utm_oi=1124773277125697536">从零开始搭建个人博客（超详细）</a></p></li><li><p><a href="https://zhuanlan.zhihu.com/p/69217131">网站ICP备案和公安备案流程</a></p></li><li><p><a href="https://www.jianshu.com/p/695283187b62">【官方支持】让个人域名下Github Pages完美支持https</a></p></li></ul><p>现在博客使用的主题为 butterfly，主要参照教程如下：</p><ul><li><p><a href="https://blog.csdn.net/mjh1667002013/article/details/129290903">【Hexo】Hexo搭建Butterfly主题并快速美化</a></p></li><li><p><a href="https://wei-ll.github.io/2023/06/23/Butterfly%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/index.html">Hexo + Butterfly主题美化</a></p></li><li><p><a href="https://butterfly.js.org/posts/4aa8abbe/#%E5%8F%83%E6%95%B8%E8%A8%AD%E7%BD%AE">Butterfly 安裝文檔(三) 主題配置-1</a></p></li><li><p><a href="https://zhuanlan.zhihu.com/p/578681041">Hexo中Buttefly最新教程总览</a></p></li></ul><h3 id="In-the-end"><a href="#In-the-end" class="headerlink" title="In the end"></a>In the end</h3><p><em>Don’t try to understand it, feel it.</em></p>]]></content>
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://sleepyfox-github.github.io/">sleepyfox’s blog</a>! This is my very first post. Click <a href="https://sleepyfox-github.github.io/about/">about</a> for more info. If you get any problems when visiting my blog, you can contact me through <a href="mailto:wanli.0ziyuan@gmail.com">my email</a>. I’d be delighted if you star me on <a href="https://github.com/sleepyfox-github?tab=repositories">GitHub</a>.😄</p><h3 id="Why-I-build-this-blog-site"><a href="#Why-I-build-this-blog-site" class="headerlink" title="Why I build this blog site"></a>Why I build this blog site</h3><ol><li>记录学习；</li><li>分享交流；</li><li>Just for fun..😂</li></ol><h3 id="How-I-build-this-blog-site"><a href="#How-I-build-this-blog-site" class="headerlink" title="How I build this blog site"></a>How I build this blog site</h3><p>Hexo生成静态页面，然后将代码托管到GitHub Pages。</p><p>文章编辑工具用的是Typora。</p><p>Valine评论系统借助LeanCloud作为数据库搭建。</p><p>Waline评论系统除了LeanCloud云数据库，还使用了Vercel部署服务端。</p><p>博客原本使用的主题为 Next下的Muse，大致效果如下图：</p><p>![previous blog page](img&#x2F;post&#x2F;Hello World&#x2F;previous blog page.png)</p><p>![previous blog post](img&#x2F;post&#x2F;Hello World&#x2F;previous blog post.png)</p><p>主要参照教程如下：</p><ul><li><p><a href="https://zhuanlan.zhihu.com/p/102592286?utm_source=qq&utm_medium=social&utm_oi=1124773277125697536">从零开始搭建个人博客（超详细）</a></p></li><li><p><a href="https://zhuanlan.zhihu.com/p/69217131">网站ICP备案和公安备案流程</a></p></li><li><p><a href="https://www.jianshu.com/p/695283187b62">【官方支持】让个人域名下Github Pages完美支持https</a></p></li></ul><p>现在博客使用的主题为 butterfly，主要参照教程如下：</p><ul><li><p><a href="https://blog.csdn.net/mjh1667002013/article/details/129290903">【Hexo】Hexo搭建Butterfly主题并快速美化</a></p></li><li><p><a href="https://wei-ll.github.io/2023/06/23/Butterfly%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/index.html">Hexo + Butterfly主题美化</a></p></li><li><p><a href="https://butterfly.js.org/posts/4aa8abbe/#%E5%8F%83%E6%95%B8%E8%A8%AD%E7%BD%AE">Butterfly 安裝文檔(三) 主題配置-1</a></p></li><li><p><a href="https://zhuanlan.zhihu.com/p/578681041">Hexo中Buttefly最新教程总览</a></p></li></ul><h3 id="In-the-end"><a href="#In-the-end" class="headerlink" title="In the end"></a>In the end</h3><p><em>Don’t try to understand it, feel it.</em></p>]]></content>
       
       
       
@@ -658,9 +658,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -687,9 +687,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -716,9 +716,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -745,9 +745,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -774,9 +774,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -803,9 +803,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
