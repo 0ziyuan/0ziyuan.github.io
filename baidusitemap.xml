@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://sleepyfox-github.github.io/2020/10/12/Relations/</loc>
+    <lastmod>2024-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://sleepyfox-github.github.io/2020/10/12/Graph_Theory/</loc>
+    <lastmod>2024-03-08</lastmod>
+  </url>
+  <url>
     <loc>https://sleepyfox-github.github.io/2020/10/12/Algorithms/</loc>
     <lastmod>2024-03-08</lastmod>
   </url>
@@ -110,14 +118,6 @@
   </url>
   <url>
     <loc>https://sleepyfox-github.github.io/2020/11/08/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
-    <lastmod>2022-06-07</lastmod>
-  </url>
-  <url>
-    <loc>https://sleepyfox-github.github.io/2020/10/13/Relations/</loc>
-    <lastmod>2022-06-07</lastmod>
-  </url>
-  <url>
-    <loc>https://sleepyfox-github.github.io/2020/10/13/Graph-Theory/</loc>
     <lastmod>2022-06-07</lastmod>
   </url>
 </urlset> 
