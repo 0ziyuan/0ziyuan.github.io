@@ -627,35 +627,6 @@
     
     
     <entry>
-      <title>Set Theory</title>
-      <link href="/2020/10/13/Set-Theory/"/>
-      <url>/2020/10/13/Set-Theory/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/0ziyuan/pic_bed/main/img/20201025123522.jpg"></p><span id="more"></span><p>集合论-基础知识-思维导图</p><p><img src="https://raw.githubusercontent.com/0ziyuan/pic_bed/main/img/20201012235518.jpg"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 离散数学 </category>
-          
-          <category> 集合论 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 思维导图 </tag>
-            
-            <tag> 基础知识 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Relations</title>
       <link href="/2020/10/13/Relations/"/>
       <url>/2020/10/13/Relations/</url>
@@ -772,11 +743,40 @@
     
     
     <entry>
+      <title>Set Theory</title>
+      <link href="/2020/10/12/Set-Theory/"/>
+      <url>/2020/10/12/Set-Theory/</url>
+      
+        <content type="html"><![CDATA[<p>DM_lecture 第二部分 Set Theory</p><p><img src="/img/post/Set_Theory/Set_Theory.png" alt="Set Theory" title="Set Theory"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 离散数学 </category>
+          
+          <category> 集合论 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 思维导图 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Foundations of Logic</title>
       <link href="/2020/10/12/Foundations_of_Logic/"/>
       <url>/2020/10/12/Foundations_of_Logic/</url>
       
-        <content type="html"><![CDATA[<p>DM_lecture 第一部分 Foundations of Logic</p><p><img src="/img/post/Foundations_of_Logic/Foundations_of_Logic.png" alt="Foundations of Logic"></p>]]></content>
+        <content type="html"><![CDATA[<p>DM_lecture 第一部分 Foundations of Logic</p><p><img src="/img/post/Foundations_of_Logic/Foundations_of_Logic.png" alt="Foundations of Logic" title="Foundations of Logic"></p>]]></content>
       
       
       <categories>
