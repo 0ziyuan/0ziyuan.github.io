@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sleepyfox-github.github.io/2020/10/12/Set-Theory/</loc>
+    <loc>https://sleepyfox-github.github.io/2020/10/12/Induction_and_Recursion/</loc>
+    <lastmod>2024-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://sleepyfox-github.github.io/2020/10/12/Set_Theory/</loc>
     <lastmod>2024-03-08</lastmod>
   </url>
   <url>
@@ -110,10 +114,6 @@
   </url>
   <url>
     <loc>https://sleepyfox-github.github.io/2020/10/13/Relations/</loc>
-    <lastmod>2022-06-07</lastmod>
-  </url>
-  <url>
-    <loc>https://sleepyfox-github.github.io/2020/10/13/Induction-and-Recursion/</loc>
     <lastmod>2022-06-07</lastmod>
   </url>
   <url>

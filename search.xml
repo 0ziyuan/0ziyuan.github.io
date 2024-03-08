@@ -656,35 +656,6 @@
     
     
     <entry>
-      <title>Induction and  Recursion</title>
-      <link href="/2020/10/13/Induction-and-Recursion/"/>
-      <url>/2020/10/13/Induction-and-Recursion/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/0ziyuan/pic_bed/main/img/20201025123918.jpg"></p><span id="more"></span><p>推导与递归-基础知识-思维导图</p><p><img src="https://raw.githubusercontent.com/0ziyuan/pic_bed/main/img/20201012234505.jpg"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 离散数学 </category>
-          
-          <category> 推导与递归 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 思维导图 </tag>
-            
-            <tag> 基础知识 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Graph Theory</title>
       <link href="/2020/10/13/Graph-Theory/"/>
       <url>/2020/10/13/Graph-Theory/</url>
@@ -743,9 +714,38 @@
     
     
     <entry>
+      <title>Induction and Recursion</title>
+      <link href="/2020/10/12/Induction_and_Recursion/"/>
+      <url>/2020/10/12/Induction_and_Recursion/</url>
+      
+        <content type="html"><![CDATA[<p>推导与递归-基础知识-思维导图</p><p><img src="/img/post/Induction_and_Recursion/Induction_and_Recursion.png" alt="Induction and Recursion" title="Induction and Recursion"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 离散数学 </category>
+          
+          <category> 推导与递归 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 思维导图 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Set Theory</title>
-      <link href="/2020/10/12/Set-Theory/"/>
-      <url>/2020/10/12/Set-Theory/</url>
+      <link href="/2020/10/12/Set_Theory/"/>
+      <url>/2020/10/12/Set_Theory/</url>
       
         <content type="html"><![CDATA[<p>DM_lecture 第二部分 Set Theory</p><p><img src="/img/post/Set_Theory/Set_Theory.png" alt="Set Theory" title="Set Theory"></p>]]></content>
       
