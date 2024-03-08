@@ -743,18 +743,18 @@
     
     
     <entry>
-      <title>Foundations of Logic</title>
-      <link href="/2020/10/13/Foundations_of_Logic/"/>
-      <url>/2020/10/13/Foundations_of_Logic/</url>
+      <title>Algorithms</title>
+      <link href="/2020/10/13/Algorithms/"/>
+      <url>/2020/10/13/Algorithms/</url>
       
-        <content type="html"><![CDATA[<p>DM_lecture 第四部分 Foundations of Logic</p><p><img src="/img/post/Foundations_of_Logic/Foundations_of_Logic.png" alt="Foundations of Logic"></p>]]></content>
+        <content type="html"><![CDATA[<p>DM_lecture 第四部分 Algorithms</p><p><img src="/img/post/Algorithms/Algorithms.png" alt="Algorithms" title="Algorithms"></p>]]></content>
       
       
       <categories>
           
           <category> 离散数学 </category>
           
-          <category> 逻辑基础 </category>
+          <category> 算法 </category>
           
       </categories>
       
@@ -772,18 +772,18 @@
     
     
     <entry>
-      <title>Algorithms</title>
-      <link href="/2020/10/13/Algorithms/"/>
-      <url>/2020/10/13/Algorithms/</url>
+      <title>Foundations of Logic</title>
+      <link href="/2020/10/12/Foundations_of_Logic/"/>
+      <url>/2020/10/12/Foundations_of_Logic/</url>
       
-        <content type="html"><![CDATA[<p>DM_lecture 第四部分 Algorithms</p><p><img src="/img/post/Algorithms/Algorithms.png" alt="Algorithms" title="Algorithms"></p>]]></content>
+        <content type="html"><![CDATA[<p>DM_lecture 第一部分 Foundations of Logic</p><p><img src="/img/post/Foundations_of_Logic/Foundations_of_Logic.png" alt="Foundations of Logic"></p>]]></content>
       
       
       <categories>
           
           <category> 离散数学 </category>
           
-          <category> 算法 </category>
+          <category> 逻辑基础 </category>
           
       </categories>
       
